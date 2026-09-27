@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arquivo das Fronteiras — Resumo | Geografia 8º ano</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101318;color:#e9e6df;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:18px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 90px}
+a{color:#4fc3d9}
+header.top{border-bottom:2px solid #e0a63c;padding:24px 0 14px;text-align:center}
+.mast{margin:0;font-size:clamp(28px,6.5vw,52px);line-height:1.05;letter-spacing:.02em;color:#e0a63c;text-transform:uppercase;font-weight:800}
+.mast .sub{display:block;font-size:.30em;letter-spacing:.28em;font-weight:400;margin-top:12px;color:#9aa3af;text-transform:uppercase}
+.faixa{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;border-top:1px solid #2f3946;border-bottom:1px solid #2f3946;margin-top:14px;padding:8px 0;color:#9aa3af}
+.selo{display:inline-block;background:#e0a63c;color:#101318;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:6px 13px;border-radius:3px;text-transform:uppercase;font-weight:700;margin-top:14px}
+nav.abas{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0 4px}
+nav.abas a{font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  color:#e9e6df;border:1px solid #2f3946;background:#181d25;padding:9px 13px;border-radius:3px}
+nav.abas a.atual{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+nav.abas a:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+.painel{border:1px solid #2f3946;background:#181d25;padding:12px 14px;margin:18px 0 22px;display:flex;flex-wrap:wrap;
+  gap:10px;align-items:center;justify-content:space-between;border-radius:4px}
+.painel .status{font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.painel .btns{display:flex;gap:7px;flex-wrap:wrap}
+button{font-family:'Courier New',monospace;font-size:13px;cursor:pointer;border:1px solid #2f3946;background:#181d25;color:#e9e6df;
+  padding:9px 13px;border-radius:3px}
+button:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.principal{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+input,select,textarea{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
+.barra{height:14px;border:1px solid #2f3946;background:#181d25;border-radius:8px;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#e0a63c,#4fc3d9);width:0;transition:width .4s}
+.progresso p{font-family:'Courier New',monospace;font-size:12.5px;margin:7px 0 22px;color:#9aa3af}
+.aviso-box{font-family:'Courier New',monospace;font-size:13px;background:#181d25;border:1px solid #2f3946;border-left:4px solid #e0a63c;
+  padding:12px 14px;border-radius:4px;line-height:1.6}
+.secao-tit{border-bottom:2px solid #e0a63c;margin:34px 0 16px;padding-bottom:7px;font-size:25px;color:#e0a63c}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.overlay.on{display:flex}
+.modal{background:#181d25;border:2px solid #e0a63c;max-width:440px;width:100%;padding:22px;border-radius:6px}
+.modal h3{margin:0 0 10px;font-size:21px;color:#e0a63c}
+.modal p{margin:0 0 16px}
+.modal .acoes{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.rodape{border-top:2px solid #2f3946;margin-top:34px;padding-top:16px;display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.rodape a{color:#e9e6df;text-decoration:none;border:1px solid #2f3946;background:#181d25;padding:10px 15px;
+  border-radius:3px;text-transform:uppercase;letter-spacing:.06em}
+.rodape a:hover{background:#e0a63c;color:#101318;border-color:#e0a63c}
+.tabela-wrap{overflow-x:auto}
+table.cob{width:100%;border-collapse:collapse;background:#181d25;font-size:16px}
+table.cob th,table.cob td{border:1px solid #2f3946;padding:9px 11px;text-align:left}
+table.cob th{background:#212934;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e0a63c}
+.postit{background:#f2dd8a;color:#2a2410;border-radius:3px;box-shadow:3px 4px 0 rgba(0,0,0,.35);padding:16px 18px;
+  transform:rotate(-.5deg);margin:14px 0}
+.postit b{display:block;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.postit code{background:#fff;border:1px dashed #6b5f2a;padding:2px 7px;font-size:15px;border-radius:2px}
+@media(max-width:620px){body{font-size:17px}}
+
+.rsec{border:1px solid #2f3946;background:#181d25;border-radius:5px;margin:0 0 20px;overflow:hidden}
+.rsec>.cab{display:flex;gap:10px;align-items:center;padding:13px 16px;background:#212934;border-bottom:1px solid #2f3946;flex-wrap:wrap}
+.rsec>.cab h2{margin:0;font-size:21px;color:#4fc3d9}
+.rsec .marca{margin-left:auto;font-family:'Courier New',monospace;font-size:12px;color:#9aa3af;display:flex;gap:7px;align-items:center;cursor:pointer}
+.rbody{padding:16px 18px}
+.rbody p{margin:0 0 12px}
+.rbody ul{margin:0 0 12px;padding-left:22px}.rbody li{margin-bottom:6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:0 0 14px}
+.mini{border:1px solid #2f3946;background:#212934;border-radius:5px;padding:13px 15px}
+.mini h4{margin:0 0 7px;font-size:16.5px;color:#e0a63c;font-family:'Courier New',monospace;letter-spacing:.04em}
+.mini p{margin:0;font-size:16px}
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:0 0 14px}
+.flip{perspective:900px;min-height:160px;cursor:pointer}
+.flipin{position:relative;width:100%;height:100%;min-height:160px;transition:transform .55s;transform-style:preserve-3d}
+.flip.on .flipin{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid #2f3946;border-radius:6px;padding:14px;
+  display:flex;flex-direction:column;justify-content:center;text-align:center}
+.face.f{background:#e0a63c;color:#101318}
+.face.f b{font-size:18px;display:block;margin-bottom:6px}
+.face.f small{font-family:'Courier New',monospace;font-size:11px;letter-spacing:.1em;opacity:.8}
+.face.v{background:#212934;color:#e9e6df;transform:rotateY(180deg);font-size:15.5px;line-height:1.5;overflow:auto}
+.alerta{border:1px solid #e05c4e;background:rgba(200,60,50,.10);border-radius:5px;padding:12px 15px;margin:0 0 14px}
+.alerta b{color:#e05c4e;display:block;margin-bottom:5px;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.linha-tempo{list-style:none;padding:0;margin:0 0 14px;border-left:3px solid #e0a63c}
+.linha-tempo li{position:relative;padding:0 0 14px 20px;margin:0}
+.linha-tempo li:before{content:'';position:absolute;left:-8px;top:7px;width:13px;height:13px;border-radius:50%;
+  background:#e0a63c;border:3px solid #181d25}
+.linha-tempo b{color:#e0a63c;font-family:'Courier New',monospace}
+.glos dt{font-weight:700;color:#4fc3d9;margin-top:10px}
+.glos dd{margin:3px 0 0 0;padding-left:0;font-size:16.5px}
+.notas textarea{width:100%;min-height:110px;font-size:16.5px;padding:10px;border:1px solid #2f3946;background:#101318;color:#e9e6df;border-radius:4px}
+table.cmp{width:100%;border-collapse:collapse;background:#212934;font-size:16px;margin:0 0 14px}
+table.cmp th,table.cmp td{border:1px solid #2f3946;padding:9px 11px;text-align:left;vertical-align:top}
+table.cmp th{background:#181d25;color:#e0a63c;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+</style>
+</head><body>
+<div class="wrap">
+<header class="top">
+  <h1 class="mast">Arquivo das Fronteiras<span class="sub">Kit de Estudo · Geografia 8º ano · Avaliação 29/09</span></h1>
+  <div class="faixa"><span>8º ano · Geografia</span><span>·</span><span>Formação territorial da América</span><span>·</span><span>pp. 137–151 e 164–168</span></div>
+  <p style="margin:0"><span class="selo">Etapa 3 — Resumo</span></p>
+</header>
+<nav class="abas"><a href="leitura-guiada.html">📖 1. Leitura Guiada</a><a href="quiz.html">🎯 2. Quiz</a><a href="resumo.html" class="atual">🗺️ 3. Resumo</a><a href="simulado.html">📝 4. Simulado</a><a href="index.html">🏠 Início</a></nav>
+
+<div class="painel">
+  <div class="status" id="status">Carregando seu progresso…</div>
+  <div class="btns">
+    <button id="btExportar">📥 Exportar</button>
+    <button id="btImportar">📤 Importar</button>
+    <button id="btZerar">🗑️ Zerar tudo</button>
+  </div>
+</div>
+<input type="file" id="arquivo" accept="application/json" style="display:none">
+
+<div class="progresso"><div class="barra"><i id="barra"></i></div><p id="txtProg"></p></div>
+<p class="aviso-box">Este resumo fecha exatamente as lacunas que o Quiz mostrou. Cartas viram quando você clica nelas.
+Marque <b>revisei</b> em cada seção — isso aparece no relatório dos pais.</p>
+<section class="rsec"><div class="cab"><h2>🗓️ Linha do tempo do arquivo</h2>
+<label class="marca"><input type="checkbox" data-s="s0"> revisei</label></div>
+<div class="rbody">
+<p>Antes de qualquer coisa, a ordem dos acontecimentos. Quase toda questão de prova se resolve sabendo <b>o que veio antes do quê</b>.</p>
+<ul class="linha-tempo">
+<li><b>Antes de 1492</b> — povos pré-colombianos ocupam o continente: maias e astecas na parte central, incas nos Andes.</li>
+<li><b>Séculos XV e XVI</b> — expansão marítima europeia: Colombo, Magalhães, Vasco da Gama. Começam os projetos coloniais.</li>
+<li><b>Séculos XVI a XIX</b> — tráfico transatlântico: cerca de 12 milhões de africanos levados à força para a América.</li>
+<li><b>1776</b> — independência dos Estados Unidos (república).</li>
+<li><b>1804</b> — independência do Haiti (revolução de escravizados).</li>
+<li><b>1816 a 1830</b> — onda de independências na América Latina: Argentina 1816, Chile 1818, México 1821, Peru 1821, <b>Brasil 1822</b>, Bolívia 1825, Uruguai 1828, Venezuela 1830, Equador 1830.</li>
+<li><b>1898</b> — Cuba e Porto Rico.</li>
+<li><b>1931</b> — independência do Canadá, aprovada pela Inglaterra para evitar que os Estados Unidos tomassem a colônia.</li>
+<li><b>1994</b> — Nafta (EUA, Canadá e México) → <b>2018</b>: revisão e novo nome, USMCA.</li>
+</ul></div></section><section class="rsec"><div class="cab"><h2>🏺 Gaveta dos povos originários</h2>
+<label class="marca"><input type="checkbox" data-s="s1"> revisei</label></div>
+<div class="rbody">
+<p>Clique em cada carta para ver o que precisa saber de cada povo.</p>
+<div class="flips">
+<div class="flip"><div class="flipin"><div class="face f"><b>Maias</b><small>parte central do continente</small></div><div class="face v"><b>Onde:</b> áreas do atual México e de países da América Central.<br><b>Sociedade:</b> predominantemente camponesa, com aristocracia de militares e sacerdotes.<br><b>Destaques:</b> sistema de escrita, astronomia e arquitetura.</div></div></div><div class="flip"><div class="flipin"><div class="face f"><b>Astecas</b><small>parte central do continente</small></div><div class="face v"><b>Capital:</b> Tenochtitlán, mais de 300 mil habitantes.<br><b>Sociedade:</b> elite monárquica e administrativa, artesãos, comerciantes, camponeses e escravizados.<br><b>Economia:</b> agricultura com jardins flutuantes e irrigação.</div></div></div><div class="flip"><div class="flipin"><div class="face f"><b>Incas</b><small>oeste da América do Sul, nos Andes</small></div><div class="face v"><b>Governo:</b> Estado centralizado, imperador como maior autoridade, sociedade em classes.<br><b>Capital:</b> Cusco.<br><b>Economia:</b> artesanato e agricultura intensiva, irrigação e lavouras em terraços.<br><b>Cultivos:</b> milho, batata, mandioca, abóbora e feijão.</div></div></div>
+</div>
+<div class="alerta"><b>Alerta de pegadinha</b>Tenochtitlán é <u>asteca</u>. Cusco é <u>inca</u>. Machu Picchu também é inca. Trocar as capitais é o erro campeão desta matéria.</div>
+<p><b>O que os três tinham em comum:</b> Estado organizado, sociedade dividida em classes e conhecimentos avançados de matemática, astronomia, engenharia e arquitetura, com grandes centros urbanos.</p></div></section><section class="rsec"><div class="cab"><h2>❄️ A "geladeira dos incas": uma técnica para cada altitude</h2>
+<label class="marca"><input type="checkbox" data-s="s2"> revisei</label></div>
+<div class="rbody">
+<p>A lógica é sempre a mesma: <b>o ambiente muda, a técnica muda</b>. Isso é o que o livro chama de <b>saber local</b> — conhecimento construído pela convivência com o lugar.</p>
+<div class="grid">
+<div class="mini"><h4>Altitudes mais baixas</h4><p>Vales entre montanhas. <b>Silos subterrâneos</b>, abaixo do nível do solo, onde a temperatura é mais estável. Guardavam batatas, milho e quinoa protegidos da umidade e de roedores.</p></div>
+<div class="mini"><h4>Altitudes médias</h4><p>Temperatura varia muito ao longo do dia. <b>Desidratação</b>: frutas cortadas em fatias finas e secas ao sol. Reduz a água, prolonga a vida útil e mantém os nutrientes.</p></div>
+<div class="mini"><h4>Altitudes elevadas</h4><p>Frio abaixo de zero à noite. <b>Congelamento natural</b>: carnes e tubérculos expostos ao frio da noite e <b>cobertos de dia</b>, para proteger da luz solar direta.</p></div>
+</div>
+<div class="postit"><b>Dica de prova</b>Se a questão citar <u>silo subterrâneo</u>, pense em altitude BAIXA. Se citar <u>secagem ao sol</u>, altitude MÉDIA. Se citar <u>frio da noite</u>, altitude ALTA. Nessa ordem: baixo → terra, médio → sol, alto → gelo.</div></div></section><section class="rsec"><div class="cab"><h2>⚔️ Exploração × povoamento: o quadro que resolve a prova</h2>
+<label class="marca"><input type="checkbox" data-s="s3"> revisei</label></div>
+<div class="rbody">
+<div class="tabela-wrap"><table class="cmp">
+<thead><tr><th></th><th>Colonização de EXPLORAÇÃO</th><th>Colonização de POVOAMENTO</th></tr></thead>
+<tbody>
+<tr><td><b>Objetivo</b></td><td>Retirar riquezas: ouro, prata, matérias-primas (madeira, especiarias)</td><td>Morar e construir uma nova vida na América</td></tr>
+<tr><td><b>Depois vem</b></td><td>Grandes lavouras monocultoras (cana-de-açúcar)</td><td>Vilas, agricultura e atividades voltadas à própria colônia</td></tr>
+<tr><td><b>Mão de obra</b></td><td>Pessoas escravizadas: nativos da América e africanos trazidos à força</td><td>Os próprios colonos e suas famílias</td></tr>
+<tr><td><b>Quem colonizou</b></td><td>Portugueses (Brasil) e espanhóis (restante da América do Sul, América Central e México)</td><td>Ingleses (EUA e parte do Canadá) e franceses (parte do Canadá e Louisiana)</td></tr>
+<tr><td><b>Quem vinha</b></td><td>Enviados para extrair riqueza para a metrópole</td><td>Grupos heterogêneos que deixavam a Inglaterra por motivos religiosos ou sociais</td></tr>
+</tbody></table></div>
+<p><b>Exceções que caem em prova:</b> os espanhóis tomaram todo o restante da América do Sul, a América Central e o México, <u>com exceção</u> de áreas dominadas por ingleses, holandeses e franceses — como as <b>Guianas</b> e algumas <b>ilhas do Caribe</b>.</p>
+<div class="alerta"><b>Alerta de pegadinha</b>Os dois principais fatores da redução da população nativa foram o <u>acesso desigual aos armamentos</u> e as <u>doenças trazidas pelos europeus</u>. Responder só “guerra” costuma perder ponto.</div>
+<p><b>Resistência:</b> em México, Paraguai, Bolívia e Peru, parte significativa da população tem origem indígena. Guarani (Paraguai), quéchua e aimará (Bolívia e Peru) seguem sendo falados por grande parte da população.</p></div></section><section class="rsec"><div class="cab"><h2>⛓️ O tráfico transatlântico e as marcas culturais</h2>
+<label class="marca"><input type="checkbox" data-s="s4"> revisei</label></div>
+<div class="rbody">
+<div class="grid">
+<div class="mini"><h4>O número geral</h4><p>Entre os séculos <b>XVI e XIX</b>, cerca de <b>12 milhões</b> de pessoas foram retiradas à força da África e levadas para a América.</p></div>
+<div class="mini"><h4>Brasil — o centro</h4><p><b>6,6 milhões</b> (mais da metade do total). Portos principais: <b>Rio de Janeiro</b> e <b>Bahia</b>. Origem: regiões costeiras ocidentais da África, perto do <b>Golfo de Benin</b>. Portugal dominou o tráfico; lavouras de cana-de-açúcar.</p></div>
+<div class="mini"><h4>Estados Unidos</h4><p>Apenas <b>5%</b> do tráfico. Destino: sul dos EUA, vale do <b>Mississippi</b>, plantações de <b>algodão</b>.</p></div>
+<div class="mini"><h4>Caribe</h4><p><b>Jamaica</b>, ilha de <b>São Domingos</b> (hoje Haiti e República Dominicana) e <b>Cuba</b> — regiões produtoras de <b>açúcar</b>.</p></div>
+</div>
+<p><b>Sincretismo:</b> fusão de rituais de diferentes religiões. A <b>santería</b> cubana combina práticas espirituais africanas de origem iorubana com elementos do catolicismo do período colonial. A matriz religiosa predominante no continente é o cristianismo, mas religiões de matriz africana e indígena têm forte presença, especialmente na América Latina.</p>
+<p><b>Quilombos:</b> comunidades formadas por africanos e afrodescendentes que escapavam da escravidão e se organizavam de forma autônoma, recuperando lógicas econômicas e culturais africanas. Hoje o Brasil tem cerca de <b>1,3 milhão</b> de quilombolas, com práticas produtivas ajustadas ao equilíbrio ambiental.</p>
+<div class="postit"><b>Não confunda os números</b><code>12 milhões</code> = total para a América · <code>6,6 milhões</code> = Brasil · <code>5%</code> = América do Norte · <code>1,3 milhão</code> = quilombolas no Brasil hoje.</div></div></section><section class="rsec"><div class="cab"><h2>🏴 As independências: três cartas e um mapa de datas</h2>
+<label class="marca"><input type="checkbox" data-s="s5"> revisei</label></div>
+<div class="rbody">
+<div class="flips">
+<div class="flip"><div class="flipin"><div class="face f"><b>Estados Unidos</b><small>1776</small></div><div class="face v"><b>Quem liderou:</b> George Washington (1732-1799) e Thomas Jefferson (1743-1826).<br><b>Como foi:</b> contestação ao domínio britânico, Declaração de Independência e Guerra Revolucionária Americana.<br><b>Desafio:</b> consolidar um governo <b>republicano</b> num mundo dominado por monarquias europeias.</div></div></div><div class="flip"><div class="flipin"><div class="face f"><b>Haiti</b><small>1804</small></div><div class="face v"><b>Quem liderou:</b> escravizados africanos, com Toussaint Louverture (1743-1803) e Jean-Jacques Dessalines (1758-1806).<br><b>Como foi:</b> primeira e <b>única</b> revolta de escravizados bem-sucedida da história; aboliu a escravidão.<br><b>Desafio:</b> resistência internacional e isolamento político, pelo temor das potências coloniais.</div></div></div><div class="flip"><div class="flipin"><div class="face f"><b>Brasil</b><small>1822</small></div><div class="face v"><b>Quem liderou:</b> Dom Pedro I (1798-1834), filho de Dom João VI (1767-1826).<br><b>Como foi:</b> separação <b>em grande parte pacífica</b>, comparada a outros processos latino-americanos.<br><b>Desafio:</b> resistência de províncias, instabilidade política, disputas regionais, governo centralizado e definição dos limites territoriais.</div></div></div>
+</div>
+<p><b>Onda latino-americana:</b> depois do movimento das colônias estadunidenses e da <b>Revolução Francesa (1789-1799)</b>, vieram México, Venezuela, Argentina, Chile, Peru e Colômbia, entre outros, contra o domínio espanhol e português.</p>
+<div class="tabela-wrap"><table class="cmp">
+<thead><tr><th>1804</th><th>1816</th><th>1818</th><th>1821</th><th>1822</th><th>1825</th><th>1828</th><th>1830</th><th>1898</th></tr></thead>
+<tbody><tr><td>Haiti</td><td>Argentina</td><td>Chile</td><td>México e Peru</td><td><b>Brasil</b></td><td>Bolívia</td><td>Uruguai</td><td>Venezuela e Equador</td><td>Cuba e Porto Rico</td></tr></tbody>
+</table></div>
+<div class="alerta"><b>Alerta de pegadinha</b>Independência política <u>não</u> é o mesmo que independência econômica. As novas nações continuaram muito centradas na produção de <b>commodities</b> para a Europa, e precisaram buscar alternativas para diversificar as estruturas produtivas. No plano cultural, o desafio era garantir a <b>coesão nacional</b> em territórios multiculturais, com significativa diversidade étnico-racial.</div></div></section><section class="rsec"><div class="cab"><h2>🇨🇦 Dossiê Canadá em quatro fichas</h2>
+<label class="marca"><input type="checkbox" data-s="s6"> revisei</label></div>
+<div class="rbody">
+<div class="grid">
+<div class="mini"><h4>Território e natureza</h4><p>Climas <b>polar e frio</b> → <b>tundras</b> e <b>florestas boreais</b> (taiga). Sociedades indígenas como <b>inuítes</b> e <b>métis</b>. Solo coberto por <b>permafrost</b> (camada permanentemente congelada).</p></div>
+<div class="mini"><h4>Formação e colonização</h4><p>Séculos <b>XVI-XIX</b>: colonizado por <b>ingleses e franceses</b>, que disputaram entre si e contra os indígenas. Século XIX: colônia inglesa, com franceses no leste (<b>Quebec</b>). Independência em <b>1931</b>, para evitar que os EUA tomassem a colônia. <b>Direitos ancestrais</b> reconhecidos aos indígenas do norte nas últimas décadas do século XX.</p></div>
+<div class="mini"><h4>Política e economia</h4><p><b>Estado Federal</b>, parlamentarismo, <b>monarquia constitucional</b> com o rei <b>Charles III</b> como chefe de Estado. Economia diversificada; indústria ~10% do PIB (2018). Industrialização acelerada <b>após a Segunda Guerra</b>, com investimentos dos EUA. <b>Quebec e Ontário</b> lideram a produção industrial.</p></div>
+<div class="mini"><h4>Sociedade e cidades</h4><p>Renda e qualidade de vida <b>elevadas</b>. Urbanização intensificada no <b>início do século XX</b>, em ritmo constante. <b>81,9%</b> urbana de <b>38,9 milhões</b> (2023). <b>Toronto</b> (~2,8 milhões) e <b>Montreal</b> concentram mais de 10 milhões. População no <b>centro-sul</b>, vale do <b>Rio São Lourenço</b> e <b>Grandes Lagos</b>.</p></div>
+</div>
+<div class="tabela-wrap"><table class="cmp">
+<thead><tr><th>Dado do Canadá</th><th>Número</th><th>Por quê</th></tr></thead>
+<tbody>
+<tr><td>Terras aráveis</td><td>4,3%</td><td>Altas latitudes e permafrost reduzem a área aproveitável</td></tr>
+<tr><td>Agricultura no PIB (2023)</td><td>1,9%</td><td>Mecanizada e diversificada, concentrada nas pradarias</td></tr>
+<tr><td>População economicamente ativa (2022)</td><td>79,5% terciário · 19% secundário · 1,2% primário</td><td>Economia de serviços, com indústria forte e agricultura pequena</td></tr>
+<tr><td>Exportações para os EUA (2020)</td><td>71,2%</td><td>Forte dependência econômica do vizinho</td></tr>
+<tr><td>Importações vindas dos EUA (2020)</td><td>55,2%</td><td>Mesma dependência, no sentido da compra</td></tr>
+</tbody></table></div>
+<p><b>Extrativismo:</b> níquel, ouro, prata, cobre, zinco e urânio — mercado interno e exportação. Um dos maiores exportadores mundiais de <b>madeiras</b>, <b>papel</b> e <b>celulose</b>; <b>reflorestamento</b> e <b>manejo florestal</b> são exigidos pelo governo <b>desde a década de 1980</b>.</p>
+<p><b>Acordos:</b> anos 1980 → primeiros acordos de livre-comércio com os EUA. <b>1994</b> → <b>Nafta</b> (EUA, Canadá e México). <b>2018</b> → revisão sob pressão do então presidente dos EUA e novo nome: <b>USMCA</b>. O Canadá também é membro da <b>Apec</b> e do <b>G7</b>.</p>
+<p><b>Imigração:</b> na segunda metade do século XX o país virou destino de milhões de imigrantes → população <b>multicultural</b>. O governo incentivou a vinda por falta de mão de obra na indústria; a escassez permite que imigrantes ocupem <b>cargos de alta qualificação</b> (programas de computador, jogos eletrônicos). Origens: <b>Índia</b> 127,9 mil · China 31 mil · Filipinas 18 mil · Nigéria 15,5 mil · França 12,6 mil · EUA 11,9 mil · Brasil 11,4 mil.</p></div></section><section class="rsec"><div class="cab"><h2>📖 Glossário do arquivo</h2>
+<label class="marca"><input type="checkbox" data-s="s7"> revisei</label></div>
+<div class="rbody">
+<dl class="glos">
+<dt>Povos pré-colombianos</dt><dd>Sociedades que já habitavam a América antes da chegada dos europeus.</dd>
+<dt>Saber local</dt><dd>Conhecimento construído por um povo a partir da convivência com o lugar onde vive — como a “geladeira dos incas”.</dd>
+<dt>Lavoura em terraços</dt><dd>Cultivo em degraus abertos na encosta da montanha, acompanhando as curvas de nível.</dd>
+<dt>Colonização de exploração</dt><dd>Aquela cujo objetivo é extrair riquezas e produzir para a metrópole, com uso de mão de obra escravizada.</dd>
+<dt>Colonização de povoamento</dt><dd>Aquela em que os colonizadores vêm para morar e construir uma nova vida no território.</dd>
+<dt>Monocultura</dt><dd>Cultivo de um único produto em grandes extensões de terra, como a cana-de-açúcar.</dd>
+<dt>Genocídio</dt><dd>Extermínio deliberado de um povo ou grupo — termo usado no livro para a escravização e o extermínio de milhões de indígenas na América portuguesa.</dd>
+<dt>Sincretismo</dt><dd>Fusão de rituais de diferentes religiões.</dd>
+<dt>Quilombo</dt><dd>Comunidade formada por africanos e afrodescendentes que escapavam da escravidão e se organizavam de forma autônoma.</dd>
+<dt>Soberania</dt><dd>Poder de um Estado de se governar sozinho, sem submissão a outro país.</dd>
+<dt>Autodeterminação</dt><dd>Direito de um povo de decidir seu próprio destino político.</dd>
+<dt>Commodities</dt><dd>Produtos primários vendidos em grande quantidade no mercado internacional, geralmente com pouco processamento.</dd>
+<dt>Direitos ancestrais</dt><dd>Conjunto de direitos relativos às populações originárias da América que ocupavam determinados territórios antes da colonização.</dd>
+<dt>Permafrost</dt><dd>Camada de solo, matéria orgânica e rochas permanentemente congelada.</dd>
+<dt>Tundra e floresta boreal</dt><dd>Formações vegetais associadas aos climas polar e frio, típicas do Canadá.</dd>
+<dt>Extrativismo</dt><dd>Atividade econômica baseada na retirada de recursos naturais, como metais e madeira.</dd>
+<dt>Aquicultura</dt><dd>Produção de organismos aquáticos, como os frutos do mar.</dd>
+</dl>
+<div class="postit"><b>Últimos 5 minutos antes da prova</b>Leia só isto: Tenochtitlán = asteca · Cusco = inca · exploração = extrair riqueza / povoamento = morar · armamentos + doenças = queda da população nativa · Brasil = 6,6 de 12 milhões · Haiti 1804 = revolta de escravizados · Canadá 1931 = para os EUA não tomarem · permafrost = 4,3% de terras aráveis · Nafta 1994 → USMCA 2018.</div></div></section>
+<section class="rsec"><div class="cab"><h2>✍️ Minhas anotações</h2></div>
+<div class="rbody notas"><p>Escreva aqui o que ainda não entrou na cabeça. Fica salvo sozinho.</p>
+<textarea id="notas" placeholder="Ex.: confundo sempre…"></textarea></div></section>
+<div class="rodape"><span>Próximo material →</span><a href="simulado.html">📝 Ir para o Simulado</a></div>
+
+</div>
+<div class="overlay" id="overlay"><div class="modal">
+  <h3 id="mTit">Aviso</h3><p id="mTxt"></p>
+  <div class="acoes"><button id="mNao" style="display:none">Cancelar</button>
+  <button class="principal" id="mSim">Entendi</button></div>
+</div></div>
+<script>
+function aviso(t,msg,onSim,comCancelar){
+  document.getElementById('mTit').textContent=t;
+  document.getElementById('mTxt').textContent=msg;
+  document.getElementById('mNao').style.display=comCancelar?'inline-block':'none';
+  var ov=document.getElementById('overlay'); ov.classList.add('on');
+  document.getElementById('mSim').onclick=function(){ov.classList.remove('on'); if(onSim)onSim();};
+  document.getElementById('mNao').onclick=function(){ov.classList.remove('on');};
+}
+</script>
+<script>
+
+var KEY='geo8sj_america_v1_resumo_v1'; var mem={};
+function ler(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return mem}}
+function gravar(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){mem=s}carimbo();}
+function carimbo(){
+  var d=new Date();
+  var f=d.toLocaleDateString('pt-BR')+' \u00e0s '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  S.quando=f;
+  try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){mem=S}
+  var el=document.getElementById('status'); if(el)el.textContent='\uD83D\uDCBE Salvo automaticamente \u2014 \u00faltima vez: '+f;
+}
+function ligarPainel(){
+  document.getElementById('btExportar').onclick=function(){
+    var blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='resumo-geografia8-formacao-america.json'; a.click();
+  };
+  document.getElementById('btImportar').onclick=function(){document.getElementById('arquivo').click();};
+  document.getElementById('arquivo').onchange=function(e){
+    var f=e.target.files[0]; if(!f)return; var r=new FileReader();
+    r.onload=function(){ try{ S=normaliza(JSON.parse(r.result)); gravar(S); render();
+        aviso('Pronto','Seu progresso foi importado com sucesso.');
+      }catch(err){ aviso('Ops','N\u00e3o consegui ler esse arquivo. Ele precisa ser o .json exportado por este material.'); } };
+    r.readAsText(f);
+  };
+  document.getElementById('btZerar').onclick=function(){
+    aviso('Zerar tudo?','Isso apaga tudo o que foi respondido nesta p\u00e1gina. N\u00e3o d\u00e1 para desfazer.',function(){
+      S=normaliza({}); gravar(S); render(); },true);
+  };
+}
+
+
+function normaliza(d){d=d||{};if(!d.check)d.check={};if(d.notas===undefined)d.notas='';if(!d.rolagem)d.rolagem=0;return d;}
+var S=normaliza(ler());
+function render(){
+  document.querySelectorAll('.marca input').forEach(function(el){
+    el.checked=!!S.check[el.dataset.s];
+  });
+  var t=document.getElementById('notas'); if(t&&t.value!==S.notas)t.value=S.notas;
+  var c=0,tot=document.querySelectorAll('.marca input').length;
+  for(var k in S.check){if(S.check[k])c++;}
+  document.getElementById('barra').style.width=(tot?c/tot*100:0)+'%';
+  document.getElementById('txtProg').textContent=c+' de '+tot+' se\u00e7\u00f5es marcadas como revisadas \u00b7 voc\u00ea leu at\u00e9 '+S.rolagem+'% da p\u00e1gina.';
+}
+document.querySelectorAll('.marca input').forEach(function(el){
+  el.addEventListener('change',function(){S.check[el.dataset.s]=el.checked;gravar(S);render();});
+});
+document.querySelectorAll('.flip').forEach(function(f){
+  f.addEventListener('click',function(){f.classList.toggle('on');});
+});
+var tn=document.getElementById('notas');
+if(tn)tn.addEventListener('input',function(){S.notas=tn.value;gravar(S);});
+function marcaRolagem(){
+  var sh=document.documentElement.scrollHeight;
+  if(sh>0){var p=Math.min(100,Math.round((window.scrollY+window.innerHeight)/sh*100));
+    if(p>S.rolagem){S.rolagem=p;gravar(S);render();}}
+}
+window.addEventListener('scroll',marcaRolagem);
+ligarPainel(); render(); marcaRolagem(); carimbo();
+
+</script>
+</body></html>

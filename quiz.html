@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arquivo das Fronteiras — Quiz | Geografia 8º ano</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101318;color:#e9e6df;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:18px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 90px}
+a{color:#4fc3d9}
+header.top{border-bottom:2px solid #e0a63c;padding:24px 0 14px;text-align:center}
+.mast{margin:0;font-size:clamp(28px,6.5vw,52px);line-height:1.05;letter-spacing:.02em;color:#e0a63c;text-transform:uppercase;font-weight:800}
+.mast .sub{display:block;font-size:.30em;letter-spacing:.28em;font-weight:400;margin-top:12px;color:#9aa3af;text-transform:uppercase}
+.faixa{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;border-top:1px solid #2f3946;border-bottom:1px solid #2f3946;margin-top:14px;padding:8px 0;color:#9aa3af}
+.selo{display:inline-block;background:#e0a63c;color:#101318;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:6px 13px;border-radius:3px;text-transform:uppercase;font-weight:700;margin-top:14px}
+nav.abas{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0 4px}
+nav.abas a{font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  color:#e9e6df;border:1px solid #2f3946;background:#181d25;padding:9px 13px;border-radius:3px}
+nav.abas a.atual{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+nav.abas a:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+.painel{border:1px solid #2f3946;background:#181d25;padding:12px 14px;margin:18px 0 22px;display:flex;flex-wrap:wrap;
+  gap:10px;align-items:center;justify-content:space-between;border-radius:4px}
+.painel .status{font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.painel .btns{display:flex;gap:7px;flex-wrap:wrap}
+button{font-family:'Courier New',monospace;font-size:13px;cursor:pointer;border:1px solid #2f3946;background:#181d25;color:#e9e6df;
+  padding:9px 13px;border-radius:3px}
+button:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.principal{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+input,select,textarea{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
+.barra{height:14px;border:1px solid #2f3946;background:#181d25;border-radius:8px;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#e0a63c,#4fc3d9);width:0;transition:width .4s}
+.progresso p{font-family:'Courier New',monospace;font-size:12.5px;margin:7px 0 22px;color:#9aa3af}
+.aviso-box{font-family:'Courier New',monospace;font-size:13px;background:#181d25;border:1px solid #2f3946;border-left:4px solid #e0a63c;
+  padding:12px 14px;border-radius:4px;line-height:1.6}
+.secao-tit{border-bottom:2px solid #e0a63c;margin:34px 0 16px;padding-bottom:7px;font-size:25px;color:#e0a63c}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.overlay.on{display:flex}
+.modal{background:#181d25;border:2px solid #e0a63c;max-width:440px;width:100%;padding:22px;border-radius:6px}
+.modal h3{margin:0 0 10px;font-size:21px;color:#e0a63c}
+.modal p{margin:0 0 16px}
+.modal .acoes{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.rodape{border-top:2px solid #2f3946;margin-top:34px;padding-top:16px;display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.rodape a{color:#e9e6df;text-decoration:none;border:1px solid #2f3946;background:#181d25;padding:10px 15px;
+  border-radius:3px;text-transform:uppercase;letter-spacing:.06em}
+.rodape a:hover{background:#e0a63c;color:#101318;border-color:#e0a63c}
+.tabela-wrap{overflow-x:auto}
+table.cob{width:100%;border-collapse:collapse;background:#181d25;font-size:16px}
+table.cob th,table.cob td{border:1px solid #2f3946;padding:9px 11px;text-align:left}
+table.cob th{background:#212934;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e0a63c}
+.postit{background:#f2dd8a;color:#2a2410;border-radius:3px;box-shadow:3px 4px 0 rgba(0,0,0,.35);padding:16px 18px;
+  transform:rotate(-.5deg);margin:14px 0}
+.postit b{display:block;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.postit code{background:#fff;border:1px dashed #6b5f2a;padding:2px 7px;font-size:15px;border-radius:2px}
+@media(max-width:620px){body{font-size:17px}}
+
+.q{border:1px solid #2f3946;background:#181d25;border-radius:5px;margin:0 0 18px;overflow:hidden}
+.q .cabq{display:flex;gap:10px;align-items:center;padding:12px 16px;background:#212934;border-bottom:1px solid #2f3946;flex-wrap:wrap}
+.q .nq{font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.12em;background:#e0a63c;color:#101318;padding:5px 10px;border-radius:3px;font-weight:700}
+.q .tag{font-family:'Courier New',monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:#101318;background:#4fc3d9;padding:4px 9px;border-radius:3px}
+.q .val{margin-left:auto;font-family:'Courier New',monospace;font-size:11.5px;color:#9aa3af}
+.q .enun{padding:16px 18px 6px;font-size:17.5px}
+.q .enun .txtbase{background:#212934;border-left:4px solid #e2703a;padding:10px 14px;margin:0 0 12px;border-radius:0 4px 4px 0;font-size:16.5px}
+.q .enun ul.afirm{list-style:none;padding:0;margin:0 0 12px}
+.q .enun ul.afirm li{background:#212934;border:1px solid #2f3946;border-radius:4px;padding:8px 12px;margin-bottom:6px;font-size:16.5px}
+.alts{padding:0 18px 16px;list-style:none;margin:0}
+.alts li{margin-bottom:8px}
+.alts label{display:flex;gap:10px;align-items:flex-start;border:1px solid #2f3946;background:#101318;border-radius:4px;
+  padding:11px 13px;cursor:pointer;font-size:16.5px}
+.alts label:hover{border-color:#4fc3d9}
+.alts input{margin-top:5px;flex-shrink:0}
+.alts .letra{font-family:'Courier New',monospace;font-weight:700;color:#e0a63c;flex-shrink:0}
+.alts label.certa{border-color:#4fbd8b;background:rgba(80,190,140,.14)}
+.alts label.errada{border-color:#2f3946;background:rgba(255,255,255,.04);opacity:.85}
+.alts label.marcada{outline:2px solid #4fc3d9}
+.expl{font-size:15px;margin:6px 0 0;padding-left:26px;color:#9aa3af;line-height:1.5}
+.expl.boa{color:#4fbd8b}
+.somin{display:flex;gap:10px;align-items:center;padding:0 18px 16px;flex-wrap:wrap}
+.somin input{width:120px;font-family:'Courier New',monospace;font-size:18px;padding:9px 11px;border:1px solid #2f3946;background:#101318;color:#e9e6df;border-radius:4px}
+.discbox{padding:0 18px 16px}
+.discbox textarea{width:100%;min-height:110px;font-size:16.5px;padding:10px;border:1px solid #2f3946;background:#101318;color:#e9e6df;border-radius:4px}
+.resultado{border:2px solid #e0a63c;background:#181d25;border-radius:6px;padding:20px;margin:22px 0;text-align:center}
+.resultado h2{margin:0 0 8px;color:#e0a63c;font-size:26px}
+.resultado .cod{font-family:'Courier New',monospace;font-size:30px;letter-spacing:.14em;background:#101318;border:2px dashed #e0a63c;
+  display:inline-block;padding:12px 22px;border-radius:5px;margin:10px 0;color:#e0a63c;font-weight:700}
+.travagab{border:1px solid #2f3946;background:#181d25;border-radius:5px;padding:18px 20px;margin:20px 0}
+.travagab input{font-family:'Courier New',monospace;text-transform:uppercase;padding:9px 11px;border:1px solid #2f3946;background:#101318;
+  color:#e9e6df;border-radius:4px;max-width:170px;font-size:16px}
+.avisoGab{color:#e05c4e;font-size:14px;margin-left:8px;font-family:'Courier New',monospace}
+.modelo-disc{border:1px solid #4fbd8b;background:rgba(80,190,140,.10);border-radius:5px;padding:14px 16px;margin:8px 18px 16px}
+.modelo-disc b{color:#4fbd8b;display:block;margin-bottom:6px;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+</style>
+</head><body>
+<div class="wrap">
+<header class="top">
+  <h1 class="mast">Arquivo das Fronteiras<span class="sub">Kit de Estudo · Geografia 8º ano · Avaliação 29/09</span></h1>
+  <div class="faixa"><span>8º ano · Geografia</span><span>·</span><span>Formação territorial da América</span><span>·</span><span>pp. 137–151 e 164–168</span></div>
+  <p style="margin:0"><span class="selo">Etapa 2 — Quiz</span></p>
+</header>
+<nav class="abas"><a href="leitura-guiada.html">📖 1. Leitura Guiada</a><a href="quiz.html" class="atual">🎯 2. Quiz</a><a href="resumo.html">🗺️ 3. Resumo</a><a href="simulado.html">📝 4. Simulado</a><a href="index.html">🏠 Início</a></nav>
+
+<div class="painel">
+  <div class="status" id="status">Carregando seu progresso…</div>
+  <div class="btns">
+    <button id="btExportar">📥 Exportar</button>
+    <button id="btImportar">📤 Importar</button>
+    <button id="btZerar">🗑️ Zerar tudo</button>
+  </div>
+</div>
+<input type="file" id="arquivo" accept="application/json" style="display:none">
+
+<div class="progresso"><div class="barra"><i id="barra"></i></div><p id="txtProg"></p></div>
+<p class="aviso-box"><b>15 questões de múltipla escolha</b> para testar o que ficou da leitura. Responda todas e clique em <b>Enviar</b>: aí aparece o código <b>MED-XX-YY</b>. O gabarito comentado só abre com esse código.</p>
+<div id="qs"></div>
+<div class="resultado" id="resultado" style="display:none"></div>
+<div style="text-align:center;margin:22px 0"><button class="principal" id="btEnviar" style="font-size:17px;padding:14px 28px">📤 Enviar respostas</button></div>
+<div class="travagab">
+  <p style="margin:0 0 10px"><b>🔒 Gabarito comentado</b> — digite o código que apareceu depois do envio (ou o código da família) para abrir.</p>
+  <input id="codGab" placeholder="MED-00-XX"><button id="btGab">Abrir gabarito</button><span class="avisoGab" id="avGab"></span>
+</div>
+<div class="rodape"><span>Próximo material →</span><a href="resumo.html">🗺️ Ir para o Resumo</a></div>
+
+</div>
+<div class="overlay" id="overlay"><div class="modal">
+  <h3 id="mTit">Aviso</h3><p id="mTxt"></p>
+  <div class="acoes"><button id="mNao" style="display:none">Cancelar</button>
+  <button class="principal" id="mSim">Entendi</button></div>
+</div></div>
+<script>
+function aviso(t,msg,onSim,comCancelar){
+  document.getElementById('mTit').textContent=t;
+  document.getElementById('mTxt').textContent=msg;
+  document.getElementById('mNao').style.display=comCancelar?'inline-block':'none';
+  var ov=document.getElementById('overlay'); ov.classList.add('on');
+  document.getElementById('mSim').onclick=function(){ov.classList.remove('on'); if(onSim)onSim();};
+  document.getElementById('mNao').onclick=function(){ov.classList.remove('on');};
+}
+</script>
+<script>
+var QS=[{"n": 1, "tipo": "mc", "tag": "Povos originários", "t": "<p>O termo <b>povos pré-colombianos</b> é usado para designar:</p>", "o": [{"id": "a", "txt": "as sociedades que já habitavam o continente americano antes da chegada dos europeus.", "ex": "Exato: o nome vem de Colombo e marca o período anterior à chegada europeia."}, {"id": "b", "txt": "os primeiros europeus que se fixaram na América depois de 1500.", "ex": "Esses são os colonizadores, não os povos pré-colombianos."}, {"id": "c", "txt": "os africanos traficados para a América entre os séculos XVI e XIX.", "ex": "O tráfico é posterior à colonização; pré-colombiano é anterior à chegada dos europeus."}, {"id": "d", "txt": "os povos que viviam na Europa antes das Grandes Navegações.", "ex": "O termo se refere a povos da América, não da Europa."}], "c": "a"}, {"n": 2, "tipo": "mc", "tag": "Astecas", "t": "<p>A capital do Estado asteca, que chegou a abrigar mais de 300 mil habitantes, era:</p>", "o": [{"id": "a", "txt": "Tenochtitlán.", "ex": "Correto: era a capital asteca, com mais de 300 mil habitantes."}, {"id": "b", "txt": "Cusco.", "ex": "Cusco era a capital do Império Inca, nos Andes."}, {"id": "c", "txt": "Machu Picchu.", "ex": "Machu Picchu é um sítio inca, no Peru, e não era a capital asteca."}, {"id": "d", "txt": "Quebec.", "ex": "Quebec é uma província do Canadá, sem relação com os astecas."}], "c": "a"}, {"n": 3, "tipo": "mc", "tag": "Incas", "t": "<p>Sobre a organização política do Império Inca, é correto afirmar que:</p>", "o": [{"id": "a", "txt": "era um Estado com governo centralizado, no qual a maior autoridade era o imperador.", "ex": "Correto, e a sociedade era dividida em classes."}, {"id": "b", "txt": "era uma república governada por representantes eleitos pelos camponeses.", "ex": "Não havia república nem eleições: o poder era centralizado no imperador."}, {"id": "c", "txt": "não havia autoridade central, e cada aldeia se governava sozinha.", "ex": "O império era justamente centralizado."}, {"id": "d", "txt": "o poder era dividido igualmente entre sacerdotes e comerciantes.", "ex": "O texto indica um Estado centralizado com o imperador como maior autoridade."}], "c": "a"}, {"n": 4, "tipo": "mc", "tag": "Saber local", "t": "<p>Nas altitudes <b>mais elevadas</b> dos Andes, a técnica de conservação de alimentos usada pelos incas era o:</p>", "o": [{"id": "a", "txt": "congelamento natural, aproveitando o frio intenso da noite.", "ex": "Correto: os alimentos eram expostos ao frio da noite e cobertos de dia, para proteger da luz solar."}, {"id": "b", "txt": "armazenamento em silos subterrâneos abaixo do nível do solo.", "ex": "Essa era a técnica das altitudes mais baixas, nos vales entre montanhas."}, {"id": "c", "txt": "desidratação, cortando as frutas em fatias finas e secando ao sol.", "ex": "Essa era a técnica das altitudes médias."}, {"id": "d", "txt": "salga da carne em grandes tanques de água do mar.", "ex": "Essa técnica não aparece no capítulo."}], "c": "a"}, {"n": 5, "tipo": "mc", "tag": "Colonização", "t": "<p>Uma característica que define a <b>colonização de exploração</b> na América é:</p>", "o": [{"id": "a", "txt": "a extração de ouro, prata e matérias-primas e, depois, as grandes lavouras monocultoras com mão de obra escravizada.", "ex": "Correto: o objetivo era retirar riquezas e produzir para a metrópole."}, {"id": "b", "txt": "a chegada de famílias europeias que vinham construir uma nova vida na América.", "ex": "Isso descreve a colonização de povoamento."}, {"id": "c", "txt": "o respeito às formas de organização econômica dos povos nativos.", "ex": "Ao contrário: os colonizadores impuseram sua organização econômica de forma violenta."}, {"id": "d", "txt": "a criação imediata de repúblicas independentes nas colônias.", "ex": "As independências vieram séculos depois, nos séculos XVIII e XIX."}], "c": "a"}, {"n": 6, "tipo": "mc", "tag": "Colonização", "t": "<p>Os ingleses que ocuparam a região onde hoje ficam os Estados Unidos formavam, segundo o livro, <b>grupos heterogêneos</b> que deixavam a Inglaterra principalmente:</p>", "o": [{"id": "a", "txt": "por motivos religiosos ou sociais, em busca de uma nova vida.", "ex": "Correto: a região tinha poucos atrativos de riqueza, e quem vinha buscava recomeçar."}, {"id": "b", "txt": "enviados pelo rei para extrair ouro e prata em grande escala.", "ex": "Essa é a lógica da colonização de exploração, típica da América espanhola e portuguesa."}, {"id": "c", "txt": "para fundar missões religiosas entre os incas.", "ex": "Os incas ficavam na América do Sul, nos Andes, e não na América do Norte inglesa."}, {"id": "d", "txt": "obrigados por lei a povoar o Caribe açucareiro.", "ex": "O Caribe açucareiro foi destino do tráfico de escravizados, não desses grupos."}], "c": "a"}, {"n": 7, "tipo": "mc", "tag": "Conflitos", "t": "<p>Segundo o capítulo, os <b>principais fatores</b> para a redução da população nativa americana foram:</p>", "o": [{"id": "a", "txt": "o acesso desigual aos armamentos e as doenças trazidas pelos europeus.", "ex": "Correto: os dois aparecem juntos como fatores principais."}, {"id": "b", "txt": "apenas as guerras travadas contra os colonizadores.", "ex": "As guerras entram, mas o texto destaca também as doenças e o desequilíbrio de armamentos."}, {"id": "c", "txt": "a migração voluntária dos povos nativos para a Europa.", "ex": "Isso não ocorreu e não aparece no capítulo."}, {"id": "d", "txt": "a falta de conhecimentos agrícolas entre os povos americanos.", "ex": "Ao contrário: esses povos tinham agricultura avançada, com irrigação e cultivo em terraços."}], "c": "a"}, {"n": 8, "tipo": "mc", "tag": "Resistência", "t": "<p>Idiomas como o <b>guarani</b>, o <b>quéchua</b> e o <b>aimará</b> continuam sendo falados por grande parte da população em países como Paraguai, Bolívia e Peru. Isso é apresentado no livro como evidência de:</p>", "o": [{"id": "a", "txt": "resistência dos povos nativos, que mantiveram um legado cultural através das gerações.", "ex": "Correto: apesar da dominação colonial, houve resistência e o legado atravessou gerações."}, {"id": "b", "txt": "ausência de colonização europeia nesses países.", "ex": "Esses países foram colonizados; a permanência dos idiomas é resultado de resistência, não de ausência de colonização."}, {"id": "c", "txt": "imposição desses idiomas pelos colonizadores espanhóis.", "ex": "Os colonizadores impuseram sua própria língua; esses idiomas são dos povos originários."}, {"id": "d", "txt": "uma política recente de criação de novas línguas oficiais.", "ex": "São línguas ancestrais, faladas desde antes da colonização."}], "c": "a"}, {"n": 9, "tipo": "mc", "tag": "Tráfico", "t": "<p>Entre os séculos XVI e XIX, estima-se que cerca de 12 milhões de africanos foram traficados para a América. Desse total, o Brasil recebeu aproximadamente:</p>", "o": [{"id": "a", "txt": "6,6 milhões de pessoas, mais da metade do total.", "ex": "Correto: o Brasil foi o centro do tráfico, com desembarques principalmente no Rio de Janeiro e na Bahia."}, {"id": "b", "txt": "5% do total, concentrados no vale do Mississippi.", "ex": "Esse é o dado da América do Norte, não do Brasil."}, {"id": "c", "txt": "1,3 milhão de pessoas, todas levadas para o Caribe.", "ex": "1,3 milhão é o número estimado de quilombolas no Brasil atualmente."}, {"id": "d", "txt": "300 mil pessoas, desembarcadas em Tenochtitlán.", "ex": "Tenochtitlán era a capital asteca e o número está muito abaixo do real."}], "c": "a"}, {"n": 10, "tipo": "mc", "tag": "Cultura", "t": "<p>A <b>santería</b>, religião praticada em Cuba, combina práticas espirituais africanas de origem iorubana com elementos do catolicismo. Esse fenômeno é chamado de:</p>", "o": [{"id": "a", "txt": "sincretismo religioso.", "ex": "Correto: sincretismo é a fusão de rituais de diferentes religiões."}, {"id": "b", "txt": "povoamento.", "ex": "Povoamento é um tipo de colonização, não um fenômeno religioso."}, {"id": "c", "txt": "extrativismo.", "ex": "Extrativismo é atividade econômica de retirada de recursos naturais."}, {"id": "d", "txt": "direitos ancestrais.", "ex": "Direitos ancestrais dizem respeito às populações originárias e aos territórios que ocupavam antes da colonização."}], "c": "a"}, {"n": 11, "tipo": "mc", "tag": "Independências", "t": "<p>A Revolução Haitiana (1804) é destacada no livro porque foi:</p>", "o": [{"id": "a", "txt": "a primeira e única revolta de escravizados bem-sucedida da história, resultando no primeiro Estado independente liderado por pessoas que haviam sido escravizadas.", "ex": "Correto, e ela culminou também na abolição da escravidão."}, {"id": "b", "txt": "a primeira independência da América, proclamada antes da dos Estados Unidos.", "ex": "A independência dos Estados Unidos foi antes, em 1776."}, {"id": "c", "txt": "um processo pacífico conduzido pela elite colonial francesa.", "ex": "Foi uma revolução liderada por escravizados africanos contra o sistema colonial francês."}, {"id": "d", "txt": "um movimento que recebeu imediato apoio das potências europeias.", "ex": "Ao contrário: o Haiti enfrentou resistência internacional e isolamento político."}], "c": "a"}, {"n": 12, "tipo": "mc", "tag": "Independências", "t": "<p>Em relação a outros processos de independência na América Latina, a independência do Brasil (1822) é descrita no livro como:</p>", "o": [{"id": "a", "txt": "em grande parte pacífica, embora tenha enfrentado resistência de províncias, instabilidade política e disputas regionais.", "ex": "Correto: a separação foi majoritariamente pacífica, mas a consolidação interna teve vários desafios."}, {"id": "b", "txt": "o resultado de uma longa guerra revolucionária contra Portugal.", "ex": "A guerra revolucionária é característica do processo dos Estados Unidos."}, {"id": "c", "txt": "uma revolução liderada por pessoas escravizadas.", "ex": "Isso descreve o caso do Haiti."}, {"id": "d", "txt": "um processo que já nasceu republicano e descentralizado.", "ex": "O Brasil tornou-se um império com governo centralizado; a república veio muito depois."}], "c": "a"}, {"n": 13, "tipo": "mc", "tag": "Canadá", "t": "<p>O território do atual Canadá permaneceu ligado à Inglaterra até <b>1931</b>. A independência foi aprovada pela potência europeia principalmente para:</p>", "o": [{"id": "a", "txt": "evitar que os Estados Unidos tomassem a colônia.", "ex": "Correto: foi uma decisão estratégica diante da pressão estadunidense."}, {"id": "b", "txt": "atender a um pedido dos movimentos separatistas de Quebec.", "ex": "Os movimentos separatistas de Quebec defendem a criação de um novo país, questão diferente e posterior."}, {"id": "c", "txt": "cumprir uma exigência do acordo Nafta.", "ex": "O Nafta é de 1994, muito depois de 1931."}, {"id": "d", "txt": "permitir a exploração do permafrost pelos franceses.", "ex": "Permafrost é uma característica natural do solo e não tem relação com a independência."}], "c": "a"}, {"n": 14, "tipo": "mc", "tag": "Canadá", "t": "<p>Apenas <b>4,3%</b> das terras do Canadá são aráveis. O principal motivo apontado pelo livro é:</p>", "o": [{"id": "a", "txt": "o país estar em altas latitudes e ter boa parte do solo coberta por permafrost, camada permanentemente congelada.", "ex": "Correto: isso reduz muito a área aproveitável para a agricultura."}, {"id": "b", "txt": "o excesso de áreas urbanas ocupando as terras férteis.", "ex": "A população canadense é concentrada, mas o motivo apontado é climático."}, {"id": "c", "txt": "a proibição legal de plantar fora das províncias de Quebec e Ontário.", "ex": "Essas províncias se destacam na produção industrial, e não há tal proibição."}, {"id": "d", "txt": "a ausência total de rios e lagos no território.", "ex": "O Canadá tem o vale do Rio São Lourenço e os Grandes Lagos."}], "c": "a"}, {"n": 15, "tipo": "mc", "tag": "Canadá", "t": "<p>Sobre a imigração no Canadá na segunda metade do século XX, é correto afirmar que:</p>", "o": [{"id": "a", "txt": "o governo a incentivou por falta de mão de obra na indústria em expansão, e ela se tornou fator essencial do crescimento populacional.", "ex": "Correto: a escassez em vários setores permite inclusive que imigrantes ocupem cargos de alta qualificação."}, {"id": "b", "txt": "ela foi proibida para preservar a identidade anglo-francesa do país.", "ex": "Ao contrário: a imigração tornou a população marcadamente multicultural."}, {"id": "c", "txt": "os imigrantes só podiam trabalhar na agricultura das pradarias.", "ex": "O texto cita cargos de alta qualificação, como na indústria de programas de computador e jogos eletrônicos."}, {"id": "d", "txt": "a maior parte dos imigrantes veio do Brasil.", "ex": "O Brasil aparece na lista, mas com 11,4 mil pessoas; a maior parte veio da Índia (127,9 mil)."}], "c": "a"}];
+var SEMENTE=29092175;var PREF='MED';var PAISCOD='PAIS-77';var TEMDISC=false;var MONO="'Courier New',monospace";
+
+var KEY='geo8sj_america_v1_quiz_v1'; var mem={};
+function ler(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return mem}}
+function gravar(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){mem=s}carimbo();}
+function carimbo(){
+  var d=new Date();
+  var f=d.toLocaleDateString('pt-BR')+' \u00e0s '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  S.quando=f;
+  try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){mem=S}
+  var el=document.getElementById('status'); if(el)el.textContent='\uD83D\uDCBE Salvo automaticamente \u2014 \u00faltima vez: '+f;
+}
+function ligarPainel(){
+  document.getElementById('btExportar').onclick=function(){
+    var blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='quiz-geografia8-formacao-america.json'; a.click();
+  };
+  document.getElementById('btImportar').onclick=function(){document.getElementById('arquivo').click();};
+  document.getElementById('arquivo').onchange=function(e){
+    var f=e.target.files[0]; if(!f)return; var r=new FileReader();
+    r.onload=function(){ try{ S=normaliza(JSON.parse(r.result)); gravar(S); render();
+        aviso('Pronto','Seu progresso foi importado com sucesso.');
+      }catch(err){ aviso('Ops','N\u00e3o consegui ler esse arquivo. Ele precisa ser o .json exportado por este material.'); } };
+    r.readAsText(f);
+  };
+  document.getElementById('btZerar').onclick=function(){
+    aviso('Zerar tudo?','Isso apaga tudo o que foi respondido nesta p\u00e1gina. N\u00e3o d\u00e1 para desfazer.',function(){
+      S=normaliza({}); gravar(S); render(); },true);
+  };
+}
+
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t;return ((t^t>>>14)>>>0)/4294967296;};}
+function embaralha(arr,semente){
+  var r=mulberry32(semente),a=arr.slice();
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(r()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+  return a;
+}
+function codigo(pref,acertos,semente){
+  var L='ABCDEFGHJKLMNPQRSTUVWXYZ', r=mulberry32(semente*7919+13);
+  var y=L[Math.floor(r()*L.length)]+L[Math.floor(r()*L.length)];
+  var n=(acertos<10?'0':'')+acertos;
+  return pref+'-'+n+'-'+y;
+}
+
+
+function normaliza(d){d=d||{};if(!d.resp)d.resp={};if(d.enviado===undefined)d.enviado=false;
+  if(d.liberado===undefined)d.liberado=false;if(!d.codigo)d.codigo='';return d;}
+var S=normaliza(ler());
+var ORDEM={};
+QS.forEach(function(q){
+  if(q.tipo==='mc'||q.tipo==='rom'){ ORDEM[q.n]=embaralha(q.o,SEMENTE+q.n*101); }
+});
+function acertou(q){
+  var r=S.resp[q.n];
+  if(q.tipo==='disc')return false;
+  if(q.tipo==='som')return r!==undefined&&r!==''&&parseInt(r,10)===q.soma;
+  return r===q.c;
+}
+function totalObj(){var t=0;QS.forEach(function(q){if(q.tipo!=='disc')t++;});return t;}
+function acertos(){var a=0;QS.forEach(function(q){if(acertou(q))a++;});return a;}
+function letra(i){return 'abcdefgh'[i];}
+function render(){
+  var alvo=document.getElementById('qs');alvo.innerHTML='';
+  QS.forEach(function(q){
+    var sec=document.createElement('section');sec.className='q';
+    var h='<div class="cabq"><span class="nq">'+(q.tipo==='disc'?'DISCURSIVA':'Quest\u00e3o '+q.n)+'</span>'+
+      (q.tag?'<span class="tag">'+q.tag+'</span>':'')+(q.val?'<span class="val">'+q.val+'</span>':'')+'</div>';
+    h+='<div class="enun">'+q.t+'</div>';
+    if(q.tipo==='som'){
+      h+='<div class="enun"><ul class="afirm">';
+      q.itens.forEach(function(it){h+='<li><b>'+it.v+'</b> \u2014 '+it.txt+'</li>';});
+      h+='</ul></div><div class="somin"><label for="s'+q.n+'">Soma correta:</label>'+
+        '<input id="s'+q.n+'" type="number" min="0" max="31" data-n="'+q.n+'" class="inSom" value="'+
+        (S.resp[q.n]!==undefined?S.resp[q.n]:'')+'" '+(S.enviado?'disabled':'')+'></div>';
+    } else if(q.tipo==='disc'){
+      h+='<div class="discbox"><textarea data-n="'+q.n+'" class="inDisc" '+(S.enviado?'readonly':'')+
+        ' placeholder="Escreva sua resposta aqui\u2026">'+((S.resp[q.n]||'').replace(/</g,'&lt;'))+'</textarea></div>';
+    } else {
+      var ord=ORDEM[q.n];
+      h+='<ul class="alts">';
+      ord.forEach(function(op,i){
+        var cls='',ex='';
+        var marcada=(S.resp[q.n]===op.id);
+        if(S.liberado){
+          cls=(op.id===q.c)?'certa':'errada';
+          ex='<p class="expl'+(op.id===q.c?' boa':'')+'">'+(op.id===q.c?'\u2705 ':'\u274C ')+op.ex+'</p>';
+        }
+        if(marcada&&!S.liberado)cls+=' marcada';
+        h+='<li><label class="'+cls+'"><input type="radio" name="q'+q.n+'" value="'+op.id+'" data-n="'+q.n+
+           '" class="inMc" '+(marcada?'checked':'')+' '+(S.enviado?'disabled':'')+'>'+
+           '<span class="letra">'+letra(i)+')</span><span>'+op.txt+'</span></label>'+ex+'</li>';
+      });
+      h+='</ul>';
+    }
+    if(S.liberado&&q.tipo==='som'){
+      h+='<div class="modelo-disc"><b>Gabarito comentado</b>Soma correta: <b>'+q.soma+'</b>. '+q.expl+'</div>';
+    }
+    if(S.liberado&&q.tipo==='disc'){
+      h+='<div class="modelo-disc"><b>Resposta modelo \u2014 para corrigir junto</b>'+q.modelo+'</div>';
+    }
+    sec.innerHTML=h;alvo.appendChild(sec);
+  });
+  ligarQ(); pintaProg(); painelResultado();
+}
+function pintaProg(){
+  var c=0;QS.forEach(function(q){var r=S.resp[q.n];if(r!==undefined&&r!=='')c++;});
+  document.getElementById('barra').style.width=(c/QS.length*100)+'%';
+  document.getElementById('txtProg').textContent=c+' de '+QS.length+' quest\u00f5es respondidas.';
+  var bt=document.getElementById('btEnviar'); if(bt)bt.disabled=S.enviado||(c<QS.length);
+}
+function ligarQ(){
+  document.querySelectorAll('.inMc').forEach(function(el){
+    el.addEventListener('change',function(){S.resp[el.dataset.n]=el.value;gravar(S);pintaProg();
+      el.closest('.alts').querySelectorAll('label').forEach(function(l){l.classList.remove('marcada');});
+      el.closest('label').classList.add('marcada');});
+  });
+  document.querySelectorAll('.inSom').forEach(function(el){
+    el.addEventListener('input',function(){S.resp[el.dataset.n]=el.value;gravar(S);pintaProg();});
+  });
+  document.querySelectorAll('.inDisc').forEach(function(el){
+    el.addEventListener('input',function(){S.resp[el.dataset.n]=el.value;gravar(S);pintaProg();});
+  });
+}
+function painelResultado(){
+  var box=document.getElementById('resultado');
+  if(!S.enviado){box.style.display='none';return;}
+  box.style.display='block';
+  var a=acertos(),t=totalObj();
+  box.innerHTML='<h2>\uD83D\uDCCB Respostas enviadas</h2>'+
+    '<p>C\u00f3digo de libera\u00e7\u00e3o para os pais:</p><div class="cod">'+S.codigo+'</div>'+
+    '<p style="font-family:'+MONO+';font-size:13px">Os dois n\u00fameros do meio s\u00e3o a quantidade de acertos (de '+t+' objetivas).'+
+    (TEMDISC?' A discursiva n\u00e3o entra na contagem \u2014 a resposta modelo est\u00e1 no gabarito.':'')+'</p>';
+}
+document.getElementById('btEnviar').onclick=function(){
+  var falta=0;QS.forEach(function(q){var r=S.resp[q.n];if(r===undefined||r==='')falta++;});
+  if(falta){aviso('Falta pouco','Ainda h\u00e1 '+falta+' quest\u00e3o(\u00f5es) sem resposta. Responda todas antes de enviar.');return;}
+  aviso('Enviar respostas?','Depois de enviar n\u00e3o d\u00e1 mais para mudar as respostas. O c\u00f3digo de libera\u00e7\u00e3o vai aparecer na tela.',function(){
+    S.enviado=true; S.codigo=codigo(PREF,acertos(),SEMENTE); gravar(S); render();
+    document.getElementById('resultado').scrollIntoView({behavior:'smooth',block:'center'});
+  },true);
+};
+document.getElementById('btGab').onclick=function(){
+  var v=(document.getElementById('codGab').value||'').trim().toUpperCase();
+  if(S.enviado&&(v===S.codigo||v===PAISCOD)){S.liberado=true;gravar(S);render();
+    document.getElementById('qs').scrollIntoView({behavior:'smooth'});}
+  else if(!S.enviado){document.getElementById('avGab').textContent=' \u274C Envie as respostas primeiro.';}
+  else{document.getElementById('avGab').textContent=' \u274C C\u00f3digo incorreto.';}
+};
+ligarPainel(); render(); carimbo();
+
+</script>
+</body></html>

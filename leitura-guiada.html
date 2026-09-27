@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arquivo das Fronteiras — Leitura Guiada | Geografia 8º ano</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#101318;color:#e9e6df;font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;font-size:18px;line-height:1.65}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 90px}
+a{color:#4fc3d9}
+header.top{border-bottom:2px solid #e0a63c;padding:24px 0 14px;text-align:center}
+.mast{margin:0;font-size:clamp(28px,6.5vw,52px);line-height:1.05;letter-spacing:.02em;color:#e0a63c;text-transform:uppercase;font-weight:800}
+.mast .sub{display:block;font-size:.30em;letter-spacing:.28em;font-weight:400;margin-top:12px;color:#9aa3af;text-transform:uppercase}
+.faixa{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.12em;
+  text-transform:uppercase;border-top:1px solid #2f3946;border-bottom:1px solid #2f3946;margin-top:14px;padding:8px 0;color:#9aa3af}
+.selo{display:inline-block;background:#e0a63c;color:#101318;font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.14em;
+  padding:6px 13px;border-radius:3px;text-transform:uppercase;font-weight:700;margin-top:14px}
+nav.abas{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:16px 0 4px}
+nav.abas a{font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;
+  color:#e9e6df;border:1px solid #2f3946;background:#181d25;padding:9px 13px;border-radius:3px}
+nav.abas a.atual{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+nav.abas a:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+.painel{border:1px solid #2f3946;background:#181d25;padding:12px 14px;margin:18px 0 22px;display:flex;flex-wrap:wrap;
+  gap:10px;align-items:center;justify-content:space-between;border-radius:4px}
+.painel .status{font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.painel .btns{display:flex;gap:7px;flex-wrap:wrap}
+button{font-family:'Courier New',monospace;font-size:13px;cursor:pointer;border:1px solid #2f3946;background:#181d25;color:#e9e6df;
+  padding:9px 13px;border-radius:3px}
+button:hover{background:#4fc3d9;color:#101318;border-color:#4fc3d9}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.principal{background:#e0a63c;color:#101318;border-color:#e0a63c;font-weight:700}
+input,select,textarea{font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif}
+.barra{height:14px;border:1px solid #2f3946;background:#181d25;border-radius:8px;overflow:hidden}
+.barra i{display:block;height:100%;background:linear-gradient(90deg,#e0a63c,#4fc3d9);width:0;transition:width .4s}
+.progresso p{font-family:'Courier New',monospace;font-size:12.5px;margin:7px 0 22px;color:#9aa3af}
+.aviso-box{font-family:'Courier New',monospace;font-size:13px;background:#181d25;border:1px solid #2f3946;border-left:4px solid #e0a63c;
+  padding:12px 14px;border-radius:4px;line-height:1.6}
+.secao-tit{border-bottom:2px solid #e0a63c;margin:34px 0 16px;padding-bottom:7px;font-size:25px;color:#e0a63c}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.74);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.overlay.on{display:flex}
+.modal{background:#181d25;border:2px solid #e0a63c;max-width:440px;width:100%;padding:22px;border-radius:6px}
+.modal h3{margin:0 0 10px;font-size:21px;color:#e0a63c}
+.modal p{margin:0 0 16px}
+.modal .acoes{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.rodape{border-top:2px solid #2f3946;margin-top:34px;padding-top:16px;display:flex;flex-wrap:wrap;gap:12px;
+  justify-content:space-between;align-items:center;font-family:'Courier New',monospace;font-size:12.5px;color:#9aa3af}
+.rodape a{color:#e9e6df;text-decoration:none;border:1px solid #2f3946;background:#181d25;padding:10px 15px;
+  border-radius:3px;text-transform:uppercase;letter-spacing:.06em}
+.rodape a:hover{background:#e0a63c;color:#101318;border-color:#e0a63c}
+.tabela-wrap{overflow-x:auto}
+table.cob{width:100%;border-collapse:collapse;background:#181d25;font-size:16px}
+table.cob th,table.cob td{border:1px solid #2f3946;padding:9px 11px;text-align:left}
+table.cob th{background:#212934;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#e0a63c}
+.postit{background:#f2dd8a;color:#2a2410;border-radius:3px;box-shadow:3px 4px 0 rgba(0,0,0,.35);padding:16px 18px;
+  transform:rotate(-.5deg);margin:14px 0}
+.postit b{display:block;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.postit code{background:#fff;border:1px dashed #6b5f2a;padding:2px 7px;font-size:15px;border-radius:2px}
+@media(max-width:620px){body{font-size:17px}}
+
+.bloco{border:1px solid #2f3946;background:#181d25;margin:0 0 22px;border-radius:5px;overflow:hidden}
+.bloco.trancado{opacity:.5}
+.bloco>.cab{display:flex;gap:12px;align-items:baseline;padding:14px 18px;border-bottom:1px solid #2f3946;background:#212934;flex-wrap:wrap}
+.bloco .num{font-family:'Courier New',monospace;font-size:11.5px;letter-spacing:.13em;color:#101318;background:#e0a63c;padding:5px 10px;border-radius:3px;white-space:nowrap;font-weight:700}
+.bloco h2{margin:0;font-size:22px;color:#4fc3d9}
+.bloco .pag{font-family:'Courier New',monospace;font-size:11.5px;color:#9aa3af;margin-left:auto;white-space:nowrap}
+.corpo{padding:18px 20px}
+.corpo p{margin:0 0 14px}
+.corpo ul{margin:0 0 14px;padding-left:22px}.corpo li{margin-bottom:7px}
+.ex{background:#212934;border-left:4px solid #e2703a;padding:10px 14px;margin:0 0 14px;border-radius:0 4px 4px 0}
+.dest{background:#e0a63c;color:#101318;padding:1px 5px;border-radius:2px;font-weight:600}
+.perguntas{border-top:1px dashed #2f3946;padding:16px 20px;background:#212934}
+.perguntas h3{font-family:'Courier New',monospace;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 12px;color:#e0a63c}
+.pergunta{margin:0 0 15px}
+.pergunta label{display:block;font-weight:700;margin-bottom:6px;font-size:17px}
+textarea{width:100%;min-height:74px;font-size:16.5px;line-height:1.5;padding:10px;border:1px solid #2f3946;
+  background:#101318;color:#e9e6df;border-radius:4px;resize:vertical}
+textarea:focus{outline:2px solid #4fc3d9;outline-offset:1px}
+textarea.verm{border-color:#e05c4e;background:rgba(200,60,50,.12)}
+.avVerm{color:#e05c4e;font-weight:bold;font-size:13.5px;margin:6px 0 0;font-family:'Courier New',monospace}
+.aviso{font-family:'Courier New',monospace;font-size:12.5px;color:#f2dd8a;margin:0 0 10px;min-height:16px;line-height:1.5}
+.modelo{border-top:1px solid #2f3946;padding:16px 20px;background:rgba(255,255,255,.035)}
+.modelo h4{font-family:'Courier New',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px;color:#4fbd8b}
+.mQ{border-top:1px dashed #2f3946;padding-top:10px;margin-top:10px}
+.mResp{margin:0 0 8px}
+.chkbox{background:#212934;border:1px solid #2f3946;border-radius:4px;padding:10px 12px}
+.chkTit{margin:0 0 8px;font-family:'Courier New',monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#9aa3af}
+.ponto{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px 0;font-size:15.5px}
+.pbts{display:flex;gap:6px;flex-shrink:0}
+.btChk{border:1px solid #2f3946;background:#181d25;color:#e9e6df;padding:5px 13px;border-radius:3px;cursor:pointer;font-size:13px}
+.btChk.on{background:#4fbd8b;color:#101318;border-color:#4fbd8b;font-weight:700}
+.btChk.nao.on{background:#e05c4e;border-color:#e05c4e;color:#fff}
+.selo-ok{color:#4fbd8b;font-weight:bold}
+.selo-rev{color:#e05c4e;font-weight:bold}
+.auto{display:flex;gap:8px;flex-wrap:wrap;align-items:center;border-top:1px dashed #2f3946;padding-top:12px;margin-top:10px}
+.cadeado{padding:16px 20px;font-family:'Courier New',monospace;font-size:13px;color:#9aa3af}
+.revisar{border:2px solid #e05c4e;background:rgba(200,60,50,.10);border-radius:5px;padding:16px 20px;margin:26px 0}
+.revisar h2{margin:0 0 10px;color:#e05c4e;font-size:22px}
+.revisar li{margin-bottom:6px}
+.pegadinhas{border:2px solid #e2703a;background:rgba(255,255,255,.04);padding:18px 20px;margin:30px 0 22px;border-radius:5px}
+.pegadinhas h2{margin:0 0 12px;color:#e2703a;font-size:23px}
+.pegadinhas ol{margin:0;padding-left:22px}.pegadinhas li{margin-bottom:10px}
+</style>
+</head><body>
+<div class="wrap">
+<header class="top">
+  <h1 class="mast">Arquivo das Fronteiras<span class="sub">Kit de Estudo · Geografia 8º ano · Avaliação 29/09</span></h1>
+  <div class="faixa"><span>8º ano · Geografia</span><span>·</span><span>Formação territorial da América</span><span>·</span><span>pp. 137–151 e 164–168</span></div>
+  <p style="margin:0"><span class="selo">Gaveta 1 — Leitura Guiada</span></p>
+</header>
+<nav class="abas"><a href="leitura-guiada.html" class="atual">📖 1. Leitura Guiada</a><a href="quiz.html">🎯 2. Quiz</a><a href="resumo.html">🗺️ 3. Resumo</a><a href="simulado.html">📝 4. Simulado</a><a href="index.html">🏠 Início</a></nav>
+
+<div class="painel">
+  <div class="status" id="status">Carregando seu progresso…</div>
+  <div class="btns">
+    <button id="btExportar">📥 Exportar</button>
+    <button id="btImportar">📤 Importar</button>
+    <button id="btZerar">🗑️ Zerar tudo</button>
+  </div>
+</div>
+<input type="file" id="arquivo" accept="application/json" style="display:none">
+
+<div class="progresso"><div class="barra"><i id="barra"></i></div>
+<p id="txtProg">Bloco 0 de 9 concluído.</p></div>
+<p class="aviso-box"><b>Como funciona:</b> leia o bloco, <b>escreva</b> as 3 respostas com suas palavras e clique em <b>Conferir</b>.
+Só depois disso aparecem a resposta modelo e o checklist. Se a resposta vier igualzinha ao texto, o material pede para reescrever
+com as suas palavras — escrever é o que faz a matéria grudar.</p>
+<div id="blocos"></div>
+<section class="revisar" id="revisarBox" style="display:none"></section>
+<section class="pegadinhas"><h2>⚠️ As 10 pegadinhas desta prova</h2><ol><li><b>Pré-colombiano não quer dizer "primitivo".</b> Maias, astecas e incas tinham Estado, classes sociais, escrita, astronomia e engenharia. O nome só marca o tempo: antes de Colombo.</li><li><b>Maias e astecas × incas:</b> maias e astecas ficavam na <u>parte central</u> do continente (México e América Central); os incas, no <u>oeste da América do Sul</u>, nos Andes.</li><li><b>Tenochtitlán é asteca; Cusco é inca.</b> Trocar as duas capitais é o erro mais comum da matéria.</li><li><b>Exploração × povoamento não é "ruim × bom".</b> A diferença está no <u>objetivo</u>: extrair riquezas e produzir para a metrópole × vir para morar e construir uma nova vida.</li><li><b>Os dois principais fatores da redução da população nativa</b> foram o <u>acesso desigual aos armamentos</u> e as <u>doenças trazidas pelos europeus</u> — não foi só a guerra.</li><li><b>O Brasil concentrou mais da metade do tráfico</b> (cerca de 6,6 milhões de 12 milhões). Os Estados Unidos ficaram com apenas <u>5%</u>. Muita gente inverte esses números.</li><li><b>Sincretismo é fusão, não substituição.</b> A santería combina práticas iorubanas com elementos do catolicismo — as duas continuam presentes.</li><li><b>A independência do Haiti (1804) veio de uma revolução de escravizados</b>, não de uma elite colonial. E ela trouxe isolamento político, não aceitação internacional.</li><li><b>O Canadá só ficou independente em 1931</b>, e por um motivo estratégico da Inglaterra: evitar que os Estados Unidos tomassem a colônia.</li><li><b>Permafrost não é neve:</b> é uma camada de solo, matéria orgânica e rochas <u>permanentemente congelada</u>. É ele que faz só 4,3% das terras do Canadá serem aráveis.</li></ol></section>
+<h2 class="secao-tit">🧭 Cobertura: tópico → bloco</h2>
+<div class="tabela-wrap"><table class="cob"><thead><tr><th>Tópico do escopo</th><th>Páginas</th><th>Bloco</th></tr></thead><tbody><tr><td>Formação territorial da América: povos pré-colombianos, maias e astecas</td><td>137</td><td>Gaveta 1</td></tr><tr><td>Incas e o saber local dos Andes ("geladeira dos incas")</td><td>140 e 141</td><td>Gaveta 2</td></tr><tr><td>Organização espacial no período colonial: exploração × povoamento e conflitos</td><td>142 e 143</td><td>Gaveta 3</td></tr><tr><td>Africanos escravizados, sincretismo e quilombos</td><td>144 e 145</td><td>Gaveta 4</td></tr><tr><td>As independências: Estados Unidos, Haiti e Brasil</td><td>150</td><td>Gaveta 5</td></tr><tr><td>Novas soberanias e os desafios econômicos e culturais</td><td>151</td><td>Gaveta 6</td></tr><tr><td>Canadá: formação territorial, dupla colonização e Quebec</td><td>164</td><td>Gaveta 7</td></tr><tr><td>Canadá: aspectos políticos e econômicos</td><td>166 e 167</td><td>Gaveta 8</td></tr><tr><td>Canadá: aspectos sociais, cidades e imigração</td><td>168</td><td>Gaveta 9</td></tr></tbody></table></div>
+<div class="rodape"><span>Próximo material da sequência →</span><a href="quiz.html">🎯 Ir para o Quiz</a></div>
+
+</div>
+<div class="overlay" id="overlay"><div class="modal">
+  <h3 id="mTit">Aviso</h3><p id="mTxt"></p>
+  <div class="acoes"><button id="mNao" style="display:none">Cancelar</button>
+  <button class="principal" id="mSim">Entendi</button></div>
+</div></div>
+<script>
+function aviso(t,msg,onSim,comCancelar){
+  document.getElementById('mTit').textContent=t;
+  document.getElementById('mTxt').textContent=msg;
+  document.getElementById('mNao').style.display=comCancelar?'inline-block':'none';
+  var ov=document.getElementById('overlay'); ov.classList.add('on');
+  document.getElementById('mSim').onclick=function(){ov.classList.remove('on'); if(onSim)onSim();};
+  document.getElementById('mNao').onclick=function(){ov.classList.remove('on');};
+}
+</script>
+<script>
+var BLOCOS=[{"n": 1, "rot": "Gaveta 1", "t": "Quem já estava aqui: os povos pré-colombianos", "pg": "p. 137", "html": "\n<p>Muito antes de qualquer europeu chegar, o continente americano já estava ocupado. As sociedades que viviam aqui são chamadas de <b>povos pré-colombianos</b> — o nome vem de Colombo: são os povos que existiam <i>antes</i> da chegada dele.</p>\n<p>Esses povos não eram todos iguais. Havia uma enorme diversidade de culturas, com idiomas e modos de vida próprios. A maioria se organizava em torno de caça, pesca, coleta de produtos, agricultura e criação de animais. O tamanho dos agrupamentos também variava muito: <span class=\"dest\">desde pequenas aldeias até grandes impérios</span>.</p>\n<p>Três sociedades se organizaram em reinos e impérios com desenvolvimento social e técnico complexo: os <b>maias</b>, os <b>astecas</b> e os <b>incas</b>. Elas tinham sociedade dividida em classes e conhecimentos avançados em áreas como astronomia e engenharia.</p>\n<div class=\"ex\"><b>Maias e astecas:</b> ficavam na parte central do continente, em áreas do atual México e de países da América Central.</div>\n<p>Os <b>maias</b> formavam uma sociedade predominantemente camponesa, com uma aristocracia composta de militares e sacerdotes. Criaram um sistema de escrita e tinham conhecimentos avançados de astronomia e arquitetura.</p>\n<p>Os <b>astecas</b> formaram um grande Estado, cuja capital era <b>Tenochtitlán</b>, que chegou a abrigar mais de 300 mil habitantes. A sociedade era composta de uma elite monárquica e administrativa, artesãos, comerciantes, camponeses e escravizados. A principal atividade econômica era a agricultura, feita com técnicas avançadas, como <b>jardins flutuantes</b> e sistemas de irrigação.</p>\n<p>Guarde esta ideia, porque ela volta em quase todas as gavetas: <span class=\"dest\">o continente não estava vazio</span>. Tudo o que veio depois — colonização, fronteiras, independências — aconteceu por cima de territórios que já tinham dono.</p>", "q": ["Com suas palavras, o que significa dizer que um povo é \"pré-colombiano\"?", "Um colega disse: \"os povos que viviam na América eram todos parecidos, viviam em pequenas aldeias de caçadores\". Usando dois exemplos do texto, explique por que essa frase está errada.", "Imagine que você precisa explicar para um aluno do 5º ano por que os astecas conseguiam sustentar uma capital com mais de 300 mil habitantes. O que você diria?"], "a": ["São os povos que já viviam na América antes da chegada dos europeus, ou seja, antes de Cristóvão Colombo. O nome vem justamente do nome dele.", "Resposta pessoal. Espera-se algo como: havia enorme diversidade de culturas e idiomas, e os agrupamentos iam de pequenas aldeias até grandes impérios. Por exemplo, os maias tinham escrita e conhecimentos de astronomia e arquitetura, e os astecas tinham um Estado com capital de mais de 300 mil habitantes — nada parecido com \"pequenas aldeias de caçadores\".", "Resposta pessoal. Espera-se: porque eles produziam muita comida: plantavam com recursos avançados, como hortas montadas sobre a água e canais que levavam água até a lavoura. Além disso, a sociedade tinha grupos com funções bem definidas — elite, artesãos, comerciantes e camponeses."]}, {"n": 2, "rot": "Gaveta 2", "t": "Incas: o império dos Andes e a \"geladeira\" da montanha", "pg": "pp. 140 e 141", "html": "\n<p>No oeste da América do Sul, ao longo da cordilheira dos Andes, ficava o <b>Império Inca</b>. Os incas desenvolveram um Estado com <span class=\"dest\">governo centralizado</span>, no qual a maior autoridade era o <b>imperador</b>, e a sociedade era dividida em classes.</p>\n<p>Esse povo praticava artesanato e <b>agricultura intensiva</b>, com emprego de técnicas avançadas de irrigação e o cultivo em <b>lavouras em terraços</b> (degraus abertos na encosta da montanha, acompanhando as curvas de nível). Muitas plantas que conhecemos hoje foram cultivadas primeiro pelos povos andinos: o <b>milho</b>, a <b>batata</b>, a <b>abóbora</b>, a <b>mandioca</b> e o <b>feijão</b>. Depois elas foram incorporadas aos hábitos alimentares dos colonizadores europeus.</p>\n<p>Os povos originários da América também tinham avançados conhecimentos de matemática, astronomia, engenharia e arquitetura, e construíram grandes centros urbanos, como <b>Cusco</b>, capital do antigo Império Inca.</p>\n<div class=\"ex\"><b>Saber local:</b> conhecimento construído por um povo a partir da convivência com o lugar onde ele vive. Não veio de fora: nasceu da observação do próprio ambiente.</div>\n<p>O melhor exemplo disso é o que o livro chama de <b>\"geladeira dos incas\"</b>. Vivendo nos Andes, onde as condições variam desde o nível do mar até altitudes de mais de 4 000 metros, eles desenvolveram <span class=\"dest\">uma técnica diferente de conservar alimentos para cada faixa de altitude</span>:</p>\n<ul>\n <li><b>Altitudes mais baixas (vales entre montanhas):</b> <b>silos subterrâneos</b>, construídos abaixo do nível do solo, onde a temperatura era mais estável e as variações climáticas, menos extremas. Ali guardavam batatas, milho e quinoa em grandes quantidades, protegidos da umidade e de roedores.</li>\n <li><b>Altitudes médias</b> (onde a temperatura varia muito ao longo do dia): técnicas de <b>desidratação</b>. As frutas eram cortadas em fatias finas e secas ao sol. Isso reduzia a água do alimento, prolongava a vida útil e mantinha os nutrientes.</li>\n <li><b>Altitudes elevadas</b> (temperaturas abaixo de zero à noite): <b>congelamento natural</b>. Carnes e tubérculos eram expostos ao frio intenso da noite e <b>cobertos durante o dia</b>, para protegê-los da luz solar direta.</li>\n</ul>\n<p>Repare no raciocínio, porque é isso que a prova costuma cobrar: a técnica muda porque <b>o ambiente muda</b>. Não é uma receita só — é adaptação inteligente e sustentável ao lugar.</p>", "q": ["Explique com suas palavras por que os incas usavam técnicas diferentes de conservar alimentos em altitudes diferentes.", "Um vizinho seu guarda batatas num porão fresco e escuro embaixo de casa. Que técnica dos incas isso lembra, e por quê?", "A expressão \"geladeira dos incas\" é usada em sentido figurado. Explique o que ela quer dizer de verdade, como se estivesse respondendo a uma questão de prova."], "a": ["Porque nos Andes as condições mudam muito conforme a altitude: dos vales até mais de 4 000 metros. Cada faixa tem temperatura e clima diferentes, então cada uma pede uma forma diferente de conservar a comida — silos subterrâneos embaixo, secagem ao sol no meio e congelamento natural no alto.", "Resposta pessoal. Espera-se: lembra os silos subterrâneos usados nas altitudes mais baixas, porque abaixo do nível do solo a temperatura é mais estável e o alimento fica protegido da umidade e dos roedores.", "Resposta pessoal. Espera-se: quer dizer que os incas usavam o próprio ambiente dos Andes — o frio da noite em grande altitude, o sol e o subsolo — para conservar alimentos, como se a montanha funcionasse como uma geladeira. É um exemplo de saber local: conhecimento nascido da convivência com o lugar."]}, {"n": 3, "rot": "Gaveta 3", "t": "Exploração × povoamento: dois jeitos de colonizar", "pg": "pp. 142 e 143", "html": "\n<p>Entre os séculos <b>XV e XVI</b> ocorreu a expansão marítima europeia. Motivados pela <b>busca de riquezas</b> e de <b>novas rotas comerciais</b>, os europeus lançaram-se à conquista de novos territórios. Com o tempo, as explorações viraram <b>projetos coloniais</b>: fixação nesses novos territórios, criação de centros urbanos e chegada de população vinda dos países colonizadores, além do desenvolvimento de atividades econômicas regulares.</p>\n<p>Os navegadores pioneiros foram o genovês <b>Cristóvão Colombo</b> (1451-1506) e <b>Fernão de Magalhães</b> (1480-1521). Com <b>Vasco da Gama</b> (1469-1524), portugueses e espanhóis foram os primeiros colonizadores do continente; depois vieram ingleses, franceses e holandeses.</p>\n<ul>\n <li><b>Portugueses:</b> ocuparam parte da área que hoje corresponde ao Brasil.</li>\n <li><b>Espanhóis:</b> tomaram o restante da América do Sul, a América Central e o México, com exceção de algumas áreas dominadas por ingleses, holandeses e franceses, como as Guianas e algumas ilhas no Caribe.</li>\n</ul>\n<p>Agora o ponto mais cobrado do capítulo: <span class=\"dest\">existiram dois tipos de colonização</span>, e eles não são a mesma coisa.</p>\n<div class=\"ex\"><b>Colonização de exploração</b> — as primeiras atividades eram <b>extrativas</b> e tinham por objetivo explorar ouro, prata e matérias-primas, como madeira e especiarias. Em seguida foram implantadas as grandes <b>lavouras monocultoras</b>, como as de cana-de-açúcar. Os colonizadores escravizaram pessoas para trabalhar: tanto nativos da América quanto africanos trazidos à força.</div>\n<div class=\"ex\"><b>Colonização de povoamento</b> — os ingleses invadiram a região onde hoje se localizam os Estados Unidos e parte do Canadá; os franceses se instalaram também em parte do Canadá e na região da Louisiana. Como havia poucos atrativos para os colonizadores, essas regiões acabaram ocupadas por <b>grupos heterogêneos</b> que abandonavam a Inglaterra por motivos religiosos ou sociais e viam na América a possibilidade de <b>construir uma nova vida</b>.</div>\n<p>Foram inúmeros os conflitos entre os colonizadores europeus e os povos nativos. De modo geral, <span class=\"dest\">os colonizadores impuseram de forma violenta e autoritária sua língua, cultura, religião e organização econômica aos povos nativos</span>.</p>\n<p>Os espanhóis entraram em guerra com os incas — um dos primeiros povos com quem tiveram contato — fazendo desaparecer o Império Inca. Os astecas também foram alvo da conquista espanhola. As grandes civilizações pré-colombianas tiveram suas cidades destruídas, suas riquezas saqueadas e seus templos derrubados para dar lugar a igrejas erguidas pelos colonizadores. <b>O acesso desigual aos armamentos e as doenças trazidas pelos europeus foram os principais fatores para a redução da população nativa.</b></p>\n<p>Na América portuguesa, houve escravização e extermínio de milhões de indígenas, o que correspondeu a um verdadeiro <b>genocídio</b>. Nos Estados Unidos, os conflitos se intensificaram no fim do século XVIII com a <b>\"Marcha para o Oeste\"</b>, que levou ao massacre de muitos povos indígenas.</p>\n<p>Apesar da dominação colonial, houve muitos casos de <b>resistência</b> dos povos nativos, o que permitiu manter um legado cultural que atravessou gerações. Em países como <b>México, Paraguai, Bolívia e Peru</b>, parte significativa da população tem origem indígena e mantém as tradições de seus antepassados. No Paraguai, na Bolívia e no Peru, idiomas como o <b>guarani</b>, o <b>quéchua</b> e o <b>aimará</b> são falados por grande parte da população.</p>", "q": ["Explique, com suas palavras, a diferença entre colonização de exploração e colonização de povoamento.", "Leia esta situação inventada: \"Na região X, os europeus chegaram em famílias inteiras, fugindo de perseguição religiosa, construíram vilas e passaram a viver da terra que cultivavam para si\". Qual tipo de colonização é esse? Justifique.", "O texto cita dois fatores principais para a redução da população nativa. Escolha um deles e explique, como se fosse para um colega, por que ele teve tanto peso."], "a": ["Na de exploração, o objetivo era retirar riquezas da colônia (ouro, prata, madeira, especiarias) e depois produzir em grandes lavouras monocultoras, usando mão de obra escravizada. Na de povoamento, as pessoas iam para a América para morar e construir uma nova vida, muitas vezes fugindo de problemas religiosos ou sociais na Europa.", "Resposta pessoal. Espera-se: é colonização de povoamento, porque as pessoas foram para morar e construir uma vida nova, saindo da Europa por motivos religiosos ou sociais, e não para extrair riquezas e mandar para a metrópole.", "Resposta pessoal. Espera-se um dos dois, explicado com palavras próprias: (1) o acesso desigual aos armamentos — os europeus tinham armas muito superiores, então os conflitos eram desequilibrados; ou (2) as doenças trazidas pelos europeus — os povos nativos nunca tinham tido contato com elas e não tinham defesas, por isso morreram em enorme quantidade."]}, {"n": 4, "rot": "Gaveta 4", "t": "Africanos escravizados: o tráfico e as marcas que ficaram", "pg": "pp. 144 e 145", "html": "\n<p>A incorporação de africanos e seus descendentes na condição de <b>escravizados</b> na América foi um processo extremamente violento, que objetivava <span class=\"dest\">desumanizar esses sujeitos</span>, extraindo deles não apenas o trabalho e a força, mas também seus conhecimentos tecnológicos.</p>\n<p>Estimativas atuais consideram que, entre os séculos <b>XVI e XIX</b>, cerca de <b>12 milhões de pessoas</b> foram retiradas à força de seus lugares de origem e transportadas para a América, especialmente para os territórios das porções atlânticas.</p>\n<div class=\"ex\"><b>O Brasil foi o centro desse tráfico.</b> O país concentrou <b>mais da metade</b> do número de escravizados no período: cerca de <b>6,6 milhões</b>, desembarcados principalmente nos portos do <b>Rio de Janeiro</b> e da <b>Bahia</b>. A maioria desses cativos vinha das regiões costeiras ocidentais da África, próximas ao <b>Golfo de Benin</b>. Portugal foi a nação que dominou o tráfico transatlântico e o explorou intensamente como mão de obra, em especial nas grandes lavouras de cana-de-açúcar.</div>\n<p>O trabalho nas lavouras também foi a motivação para a exploração do tráfico e da mão de obra de africanos escravizados nos <b>Estados Unidos</b>. Embora a América do Norte tenha concentrado apenas <b>5%</b> do tráfico de escravizados, muitos foram levados para as terras do sul dos Estados Unidos, no vale do Mississippi, para o trabalho nas <b>plantações de algodão</b>.</p>\n<p>O <b>Caribe</b> foi outro grande destino do mercado de escravizados. As regiões produtoras de açúcar na <b>Jamaica</b>, na ilha de <b>São Domingos</b> (atuais Haiti e República Dominicana) e em <b>Cuba</b> concentraram a maior parte dos africanos levados para a região.</p>\n<p>Antes do processo de colonização europeia, o continente americano já apresentava grande diversidade étnica. Quando os africanos chegaram, <b>criaram estratégias</b> para garantir a manutenção de seus valores e na tentativa de praticar seus ritos religiosos (que eram proibidos). Também assimilaram elementos da cultura nativa e da cultura dos colonizadores. Desse modo, o contato e as trocas culturais entre matrizes culturais e sociais distintas influenciaram a cultura e a formação dos povos do continente americano.</p>\n<p>Hoje, a matriz religiosa predominante na população americana é o <b>cristianismo</b> (catolicismo e protestantismo). Ainda assim, as religiões de matriz africana e indígena têm forte presença no continente, especialmente na <b>América Latina</b>. O contato entre culturas fez com que elas influenciassem umas às outras. No caso da religião, essa influência mútua resultou em grande <b>sincretismo</b>, ou seja, na <span class=\"dest\">fusão de rituais de diferentes religiões</span>.</p>\n<div class=\"ex\"><b>Exemplo do livro:</b> a <b>santería</b>, religião sincrética de Cuba, combina práticas espirituais africanas trazidas pelos escravizados de origem iorubana com elementos do catolicismo do período colonial.</div>\n<p>Houve também resistência organizada. Os <b>quilombos</b>, formados por africanos e afrodescendentes que escapavam da escravidão, organizavam-se de forma autônoma, recuperando lógicas econômicas e culturais africanas e resistindo às violências coloniais. Atualmente, estima-se que o Brasil tenha cerca de <b>1,3 milhão de quilombolas</b>. Essas comunidades mantêm práticas produtivas ajustadas às suas necessidades e ao equilíbrio ambiental, promovendo uma agricultura menos predatória.</p>", "q": ["Por que o texto diz que o Brasil foi \"o centro\" do tráfico transatlântico? Responda com seus próprios dados do texto.", "Uma revista inventada publicou: \"a cultura americana de hoje é só uma cópia da cultura europeia\". Usando o conceito de sincretismo, escreva uma resposta curta mostrando por que essa frase está errada.", "Explique para alguém que nunca ouviu falar no assunto o que era um quilombo e por que ele é considerado uma forma de resistência."], "a": ["Porque mais da metade de todas as pessoas traficadas no período veio parar aqui: cerca de 6,6 milhões, de um total estimado em 12 milhões que chegaram à América. E quase todas entravam por dois lugares: os portos da Bahia e do Rio de Janeiro.", "Resposta pessoal. Espera-se: a cultura americana nasceu do contato entre matrizes diferentes — indígena, africana e europeia. O sincretismo mostra isso: rituais de religiões diferentes se fundiram, como na santería cubana, que junta práticas de origem iorubana com elementos do catolicismo. Então não é cópia: é mistura, e as três matrizes influenciaram umas às outras.", "Resposta pessoal. Espera-se: quilombo era uma comunidade criada por pessoas africanas e afrodescendentes que fugiam da escravidão e passavam a se organizar por conta própria. É resistência porque ali elas retomavam modos de viver e de produzir vindos da África e ficavam fora do sistema escravista, enfrentando a violência colonial."]}, {"n": 5, "rot": "Gaveta 5", "t": "As independências: três casos emblemáticos", "pg": "p. 150", "html": "\n<p>A história das independências políticas no continente americano é marcada por uma série de movimentos e eventos que <span class=\"dest\">transformaram radicalmente o mapa político da região</span>, desafiando o domínio colonial europeu e estabelecendo novas nações soberanas. Três casos são emblemáticos: <b>Estados Unidos</b>, <b>Haiti</b> e <b>Brasil</b>.</p>\n<div class=\"ex\"><b>Estados Unidos — 1776.</b> A independência foi proclamada em 1776 e é um marco crucial na história moderna. O movimento foi liderado por figuras como <b>George Washington</b> (1732-1799) e <b>Thomas Jefferson</b> (1743-1826), que contestaram o domínio britânico, culminando na <b>Declaração de Independência</b> e na <b>Guerra Revolucionária Americana</b>. Após a vitória, os Estados Unidos enfrentaram o desafio de consolidar uma nova forma de governo <b>republicano</b> e de estabelecer relações diplomáticas internacionais num contexto global ainda dominado por monarquias europeias.</div>\n<div class=\"ex\"><b>Haiti — 1804.</b> A independência foi resultado de uma <b>revolução liderada por escravizados africanos</b>, sob o comando de líderes como <b>Toussaint Louverture</b> (1743-1803) e <b>Jean-Jacques Dessalines</b> (1758-1806), que desafiaram o sistema colonial francês. A Revolução Haitiana foi a <span class=\"dest\">primeira e única revolta de escravizados bem-sucedida na história</span>, e culminou na abolição da escravidão e na criação do primeiro Estado independente liderado por pessoas que haviam sido escravizadas. No entanto, o Haiti enfrentou desafios significativos, incluindo a resistência internacional e o isolamento político, devido ao temor das potências coloniais em relação a possíveis revoltas em suas próprias colônias.</div>\n<div class=\"ex\"><b>Brasil — 1822.</b> A independência foi proclamada em 1822 por <b>Dom Pedro I</b> (1798-1834), filho do rei português Dom João VI (1767-1826), marcando a ruptura com o domínio colonial. A separação foi <b>em grande parte pacífica</b> em comparação com outros processos de independência na América Latina. Ainda assim, a transição para a soberania nacional enfrentou desafios internos, como a resistência de províncias contrárias à independência, a instabilidade política e as disputas regionais. A consolidação de um governo centralizado e a definição dos limites territoriais também foram questões cruciais.</div>\n<p>Repare no que diferencia os três, porque é isso que costuma cair: <b>quem liderou</b> (elite colonial × escravizados × príncipe português), <b>como foi</b> (guerra × revolução × separação majoritariamente pacífica) e <b>o que nasceu</b> (república × primeiro Estado liderado por ex-escravizados × império com governo centralizado).</p>", "q": ["Por que a Revolução Haitiana é considerada única na história? Explique com suas palavras.", "Monte uma comparação curta entre a independência dos Estados Unidos e a do Brasil, apontando pelo menos duas diferenças.", "Uma prova inventada trouxe a afirmação: \"o Haiti conquistou a independência em 1804 e, a partir daí, foi bem aceito pelas potências europeias\". Essa afirmação está correta? Justifique."], "a": ["Porque foi a única vez na história em que uma revolta de pessoas escravizadas deu certo: os próprios africanos escravizados comandaram o movimento, derrubaram o domínio colonial francês, acabaram com a escravidão e fundaram o primeiro país independente dirigido por quem tinha sido escravizado.", "Resposta pessoal. Espera-se pelo menos duas diferenças, como: nos EUA houve uma guerra (a Guerra Revolucionária Americana), enquanto no Brasil a separação foi em grande parte pacífica; nos EUA nasceu uma república, enquanto no Brasil ficou um governo monárquico centralizado, proclamado por Dom Pedro I, filho do rei português; as datas também diferem (1776 e 1822).", "Resposta pessoal. Espera-se: está errada. O Haiti enfrentou desafios significativos, entre eles a resistência internacional e o isolamento político, porque as potências coloniais temiam que revoltas parecidas acontecessem em suas próprias colônias."]}, {"n": 6, "rot": "Gaveta 6", "t": "Novas soberanias e os desafios que sobraram", "pg": "p. 151", "html": "\n<p>Além dos três exemplos da gaveta anterior, várias outras nações na América Latina obtiveram sua independência nas <b>décadas seguintes do século XIX</b>, depois do início do movimento liderado pelas colônias estadunidenses e pela <b>Revolução Francesa (1789-1799)</b>. Países como <b>México, Venezuela, Argentina, Chile, Peru e Colômbia</b>, entre outros, lutaram contra o domínio espanhol e português, enfrentando desafios semelhantes no estabelecimento de governos estáveis, na organização econômica e na definição de suas identidades nacionais.</p>\n<div class=\"ex\"><b>Algumas datas do mapa (p. 151):</b> Haiti 1804 · Argentina 1816 · Chile 1818 · México 1821 · Peru 1821 · Brasil 1822 · Bolívia 1825 · Uruguai 1828 · Venezuela 1830 · Equador 1830 · Cuba 1898 · Porto Rico 1898.</div>\n<p>De modo geral, as independências no continente americano representaram um <b>movimento transformador na história global</b>, desafiando o <i>status quo</i> colonial e estabelecendo novos paradigmas de <b>autodeterminação</b> e <b>soberania</b>. Cada país enfrentou seus próprios desafios na transição para a independência, moldando assim a sua história política, social e econômica até a atualidade.</p>\n<p>Só que a independência não resolveu tudo. <span class=\"dest\">Numerosos desafios econômicos e culturais se impuseram às novas nações:</span></p>\n<ul>\n <li><b>No âmbito econômico:</b> foi necessário buscar alternativas para <b>diversificar as estruturas produtivas</b>, ainda muito centradas na produção de <b>commodities</b> para a Europa.</li>\n <li><b>No aspecto cultural:</b> os desafios estiveram ligados à necessidade de <b>garantir a coesão nacional</b> em territórios multiculturais, marcados por uma significativa <b>diversidade étnico-racial</b>.</li>\n</ul>\n<p>Guarde esta ideia para a prova: ser independente politicamente não significou, automaticamente, ser independente economicamente. A busca pela consolidação da governança e pela construção de identidades nacionais continua sendo <b>um processo dinâmico e multifacetado</b> em muitos países da região.</p>", "q": ["Explique com suas palavras por que a independência política não resolveu os problemas econômicos das novas nações americanas.", "Um jornal inventado publicou a manchete: \"Independente desde 1825, país ainda exporta quase só um produto agrícola para a Europa\". Qual dos desafios citados no texto essa manchete ilustra? Explique.", "Por que garantir a \"coesão nacional\" era um desafio nesses novos países? Responda como se explicasse para um colega."], "a": ["Porque a produção desses países seguiu presa à venda de commodities para os europeus. Ou seja, passaram a se governar sozinhos, mas a economia continuou dependendo de exportar matéria-prima, e foi preciso procurar caminhos para variar o que se produzia.", "Resposta pessoal. Espera-se: ilustra o desafio econômico — a economia continuar centrada na produção de commodities para a Europa, sem diversificação das estruturas produtivas, mesmo depois da independência política.", "Resposta pessoal. Espera-se: porque os territórios eram multiculturais, marcados por significativa diversidade étnico-racial. Era preciso construir uma identidade nacional que unisse povos muito diferentes entre si, e isso não acontece de uma hora para outra."]}, {"n": 7, "rot": "Gaveta 7", "t": "Dossiê Canadá I: como o território se formou", "pg": "p. 164", "html": "\n<p>O Canadá faz parte da <b>América Anglo-Saxônica</b>. Seu território apresenta uma série de características físico-naturais ligadas aos tipos climáticos <span class=\"dest\">polar e frio</span>, que condicionaram o desenvolvimento de <b>tundras</b> e <b>florestas boreais</b> (taiga).</p>\n<p>Nesses espaços naturais, durante séculos, diversas sociedades indígenas organizaram seus territórios, como os <b>inuítes</b> e os <b>métis</b>.</p>\n<p>Entre os séculos <b>XVI e XIX</b>, o território do atual Canadá foi colonizado por <b>ingleses e franceses</b>, que disputaram seu domínio <b>entre si</b> e <b>contra os povos indígenas</b> da região. No século XIX houve a formalização do território como <b>colônia inglesa</b>, com a predominância de franceses no leste, na região de <b>Quebec</b>.</p>\n<div class=\"ex\"><b>1931 — a independência.</b> O território permaneceu ligado à Inglaterra até 1931, quando, <b>para evitar que os Estados Unidos tomassem a colônia</b>, a potência europeia aprovou a independência canadense.</div>\n<p>Inicialmente, apenas as províncias do leste formavam o Canadá, enquanto o restante do território permanecia vinculado à Inglaterra. Grupos indígenas que ainda vivem na região se estabeleceram nas áreas florestais do norte e conseguiram, nas últimas décadas do século XX, o reconhecimento de <b>direitos ancestrais</b> e a soberania sobre essa porção do território canadense.</p>\n<div class=\"ex\"><b>Direitos ancestrais:</b> conjunto de direitos relativos às populações originárias da América que ocupavam determinados territórios <b>antes da colonização</b>.</div>\n<p>A <b>dupla colonização</b> é uma característica importante do Canadá e se reflete, por exemplo, na existência de <b>duas línguas oficiais</b>: o <b>inglês</b> e o <b>francês</b>. Contudo, na província de <b>Quebec</b>, colonizada pela França e onde a maior parte da população é descendente de franceses, existem <b>movimentos separatistas</b> que defendem a criação de um novo país.</p>\n<p><b>Montreal</b> é a maior cidade da província de Quebec e sua região metropolitana é a segunda mais populosa do Canadá. Grande parte da sua população é falante de francês, o que a constitui a <span class=\"dest\">maior cidade francófona da América do Norte</span>.</p>", "q": ["Explique com suas palavras o que é a \"dupla colonização\" do Canadá e um efeito dela que existe até hoje.", "Por que a Inglaterra aprovou a independência do Canadá em 1931? Responda como se estivesse contando a história para alguém.", "Um morador inventado de Quebec diz: \"aqui a gente fala francês e muita gente quer um país só nosso\". Usando o texto, explique de onde vem essa situação."], "a": ["Dupla colonização quer dizer que o território foi ocupado por dois povos europeus diferentes, ingleses e franceses, que brigaram entre si pelo domínio. Um efeito que dura até hoje: o país tem duas línguas oficiais, francês e inglês.", "Resposta pessoal. Espera-se: porque a Inglaterra queria impedir que o vizinho — os Estados Unidos — ficasse com a colônia. Aprovar a independência foi o jeito que ela encontrou de não perder aquele território.", "Resposta pessoal. Espera-se: Quebec foi colonizada pela França, e a maioria das pessoas que moram lá descende de franceses. Por isso o francês é a língua da região, e há grupos separatistas por lá que querem criar um país próprio."]}, {"n": 8, "rot": "Gaveta 8", "t": "Dossiê Canadá II: política e economia", "pg": "pp. 166 e 167", "html": "\n<p>O Canadá atualmente se constitui como um <b>Estado Federal</b>, com <b>parlamentarismo</b>, sob uma <b>monarquia constitucional</b>, tendo o rei <b>Charles III</b> como chefe de Estado — o que revela os laços políticos históricos com o Reino Unido.</p>\n<p>Trata-se de um país de <b>economia diversificada</b>, com grande participação industrial no PIB: cerca de <b>10%</b> em 2018 (sem considerar construção civil e energia). Na indústria canadense destacam-se os setores <b>energético</b> (de combustíveis), <b>mobiliário, químico, siderúrgico, aeronáutico, alimentício</b> e as indústrias ligadas à exploração de recursos naturais.</p>\n<p>O Canadá passou por um processo acelerado de industrialização <b>após a Segunda Guerra Mundial</b>, beneficiando-se de suas <b>grandes reservas minerais</b> e <b>fontes de energia</b>. Boa parte dos investimentos industriais foi feita pelos <b>Estados Unidos</b>.</p>\n<p>As indústrias canadenses apresentam <b>alta produtividade</b> e <b>avançado nível tecnológico</b>. As províncias de <b>Quebec e Ontário</b> são responsáveis pela maior parte do valor da produção industrial do país. Em 2022, cerca de <b>79,5%</b> da população economicamente ativa se encontrava no <b>setor terciário</b>, enquanto <b>19%</b> estava no <b>secundário</b> e <b>1,2%</b> no <b>primário</b>.</p>\n<div class=\"ex\"><b>Agricultura:</b> bastante <b>mecanizada</b>, diversificada, com participação de <b>1,9%</b> do PIB nacional em 2023. Apenas <b>4,3%</b> das terras do país são aráveis, devido principalmente a fatores climáticos. O território canadense, localizado em <b>altas latitudes</b>, é coberto pelo <b>permafrost</b> (camada de solo, matéria orgânica e rochas <b>permanentemente congelada</b>), o que reduz a área de aproveitamento do solo para a agricultura. A produção agrícola está concentrada nas áreas de <b>pradarias</b>. Na pecuária, destaca-se a criação de bovinos. Outro setor de grande importância econômica é a <b>aquicultura</b>, ou seja, a produção de frutos do mar.</div>\n<p>O <b>extrativismo</b> é uma atividade muito importante no Canadá. São explorados metais variados (<b>níquel, ouro, prata, cobre, zinco, urânio</b>), que atendem às demandas do mercado interno e também se destinam à exportação.</p>\n<p>O país é um dos maiores exportadores mundiais de <b>madeiras</b> e seus derivados, como o <b>papel</b> e a <b>celulose</b>. O <b>reflorestamento</b> e o <b>manejo florestal</b> são exigências do governo canadense <b>desde a década de 1980</b>, com o objetivo de reduzir os impactos ambientais dessa atividade.</p>\n<div class=\"ex\"><b>Dependência dos Estados Unidos (dados de 2020):</b> mais de <b>70%</b> das exportações do Canadá foram destinadas ao país vizinho (71,2%) e mais de <b>50%</b> das importações canadenses vieram dos Estados Unidos (55,2%).</div>\n<p>Na década de <b>1980</b> foram assinados os primeiros acordos de livre-comércio entre Canadá e Estados Unidos, o que levou ao aumento das trocas comerciais entre ambos e ao grande volume de investimentos estadunidenses no Canadá. O <b>Nafta</b> (Acordo de Livre Comércio da América do Norte) foi um acordo comercial entre <b>Estados Unidos, Canadá e México</b>, criado em <b>1994</b>. Em <b>2018</b>, Donald Trump (1946-), então presidente dos Estados Unidos, pressionou para que houvesse uma revisão do Nafta, que passou a ser chamado de <b>USMCA</b> (Acordo Estados Unidos-México-Canadá, sigla em inglês). O Canadá também é membro da <b>Apec</b> (Cooperação Econômica da Ásia e do Pacífico) e do <b>G7</b>, grupo formado pelos países mais industrializados e ricos do mundo.</p>", "q": ["Apenas 4,3% das terras do Canadá são aráveis. Explique com suas palavras por que esse número é tão baixo.", "Um economista inventado disse: \"quando a economia dos Estados Unidos vai mal, o Canadá sente na hora\". Usando dois dados do texto, explique por que ele tem razão.", "Qual é a diferença entre o Nafta e o USMCA? Explique como se respondesse a uma questão de prova."], "a": ["Porque o país fica em latitudes muito altas, com clima polar e frio. Grande parte do chão é tomada pelo permafrost — uma camada congelada o ano inteiro, feita de terra, matéria orgânica e rocha —, e isso diminui bastante o espaço que dá para plantar.", "Resposta pessoal. Espera-se o uso dos dois percentuais: mais de 70% das exportações canadenses vão para os Estados Unidos (71,2% em 2020) e mais de 50% das importações do Canadá vêm de lá (55,2%). Como quase toda a venda e boa parte da compra dependem do vizinho, qualquer crise nos Estados Unidos atinge o Canadá rapidamente.", "Resposta pessoal. Espera-se: o Nafta era o acordo de livre-comércio norte-americano, criado em 1994 e que juntava três países: Estados Unidos, Canadá e México. Em 2018, depois que o então presidente estadunidense pressionou por uma revisão, ele ganhou outro nome: USMCA. É o mesmo bloco, revisado e rebatizado."]}, {"n": 9, "rot": "Gaveta 9", "t": "Dossiê Canadá III: sociedade, cidades e imigração", "pg": "p. 168", "html": "\n<p>A população do Canadá, em geral, possui <b>renda e qualidade de vida elevadas</b>. Seus habitantes têm acesso a serviços públicos de <b>educação e saúde de alta qualidade</b>, o que resultou no <b>aumento da expectativa de vida</b> e na melhoria das condições de saúde da população.</p>\n<p>O processo de <b>urbanização</b> canadense se intensificou no <b>início do século XX</b>. Desde a independência, as atividades comerciais e manufatureiras passaram a desempenhar papel mais importante que as agropecuárias na economia. Assim, <span class=\"dest\">não houve um período marcado por crescimento acelerado da urbanização</span>: a taxa de crescimento urbano permaneceu constante.</p>\n<div class=\"ex\"><b>Dados de 2023:</b> a população urbana representava <b>81,9%</b> do total de <b>38,9 milhões</b> de habitantes, e mais de <b>10 milhões</b> de pessoas moravam nas duas principais regiões metropolitanas: <b>Toronto</b> e <b>Montreal</b>. Com cerca de <b>2,8 milhões</b> de habitantes, Toronto é a cidade mais populosa do Canadá.</div>\n<p>As áreas mais povoadas e as maiores cidades do Canadá ficam no <b>centro-sul</b>, no <b>vale do Rio São Lourenço</b> e no entorno dos <b>Grandes Lagos</b>, onde se concentram também as indústrias e as principais atividades econômicas do país. Nas demais regiões, a densidade populacional é <b>muito baixa</b>, com vastas áreas florestais ou com predomínio de clima com temperaturas extremamente baixas.</p>\n<p>Na <b>segunda metade do século XX</b>, o Canadá transformou-se no destino de <b>milhões de imigrantes</b>, o que tornou sua população <b>marcadamente multicultural</b>. Com falta de mão de obra para a indústria em expansão, o governo <b>incentivou a imigração</b> de trabalhadores. A escassez de mão de obra em diversos setores possibilita que os imigrantes ocupem <b>cargos de alta qualificação</b>, como na indústria de programas de computador e de jogos eletrônicos. A imigração tornou-se um <b>fator essencial do crescimento populacional canadense</b>.</p>\n<div class=\"ex\"><b>De onde vêm os imigrantes (dados do livro):</b> a maior parte veio da <b>Índia</b> (127,9 mil pessoas), seguida da <b>China</b> (31 mil), das <b>Filipinas</b> (18 mil), da <b>Nigéria</b> (15,5 mil), da <b>França</b> (12,6 mil), dos <b>Estados Unidos</b> (11,9 mil) e do <b>Brasil</b> (11,4 mil).</div>\n<p>Um detalhe que costuma cair na prova: as atividades econômicas do Canadá <b>impactam o clima do país</b>. A extração mineral e o desmatamento aumentam as emissões de gases de efeito estufa, e as alterações de precipitação e temperatura afetam as <b>florestas boreais</b> e as <b>regiões árticas</b>. Essa situação exige políticas e práticas sustentáveis para mitigar esses impactos.</p>", "q": ["Por que o Canadá incentivou a imigração na segunda metade do século XX? Explique com suas palavras.", "Observe: o Canadá tem quase 10 milhões de km² e 38,9 milhões de habitantes, mas mais de 10 milhões deles moram em apenas duas regiões metropolitanas. Explique por que a população se concentra tanto.", "Um post inventado diz: \"no Canadá, imigrante só consegue trabalho pesado e sem qualificação\". Usando o texto, escreva uma resposta mostrando por que isso não se sustenta."], "a": ["Porque faltava mão de obra para a indústria, que estava em expansão. O governo então incentivou a vinda de trabalhadores de outros países, e a imigração acabou se tornando um fator essencial do crescimento populacional canadense.", "Resposta pessoal. Espera-se: porque quase todo mundo vive na parte sul do país, ao longo do rio São Lourenço e em volta dos Grandes Lagos — é ali que estão as fábricas e o grosso da economia. No resto do território quase não mora ninguém: são florestas imensas ou lugares de frio extremo.", "Resposta pessoal. Espera-se: o texto mostra o contrário. Como falta gente para trabalhar em vários setores, quem chega de fora acaba assumindo vagas que pedem muita qualificação — por exemplo, nas empresas que fazem programas de computador e jogos eletrônicos."]}];
+var PONTOS=[[["que são os povos que já viviam na América antes da chegada dos europeus", "que o nome vem de Colombo (antes de Colombo)"], ["que havia grande diversidade de culturas e idiomas", "que os agrupamentos iam de aldeias até grandes impérios", "citei um exemplo concreto (maias, astecas ou incas)"], ["que a agricultura era a principal atividade econômica", "que usavam técnicas avançadas (jardins flutuantes, irrigação)", "expliquei com minhas palavras, sem copiar o texto"]], [["que as condições mudam conforme a altitude nos Andes", "que cada faixa de altitude tem uma técnica própria", "citei pelo menos duas técnicas diferentes"], ["que lembra os silos subterrâneos", "porque abaixo do solo a temperatura é mais estável / protege da umidade"], ["que o ambiente dos Andes (frio, sol, subsolo) era usado para conservar alimentos", "que é um exemplo de saber local, construído pela convivência com o lugar"]], [["que na exploração o objetivo era extrair riquezas / produzir para a metrópole", "que na de povoamento as pessoas iam para morar e construir uma nova vida", "citei a mão de obra escravizada na de exploração"], ["que é colonização de povoamento", "justifiquei pelo motivo (vir para morar, fugindo de questões religiosas ou sociais)"], ["escolhi um dos dois fatores (armamentos ou doenças)", "expliquei por que ele teve tanto peso, com minhas palavras"]], [["que o Brasil concentrou mais da metade dos escravizados (cerca de 6,6 milhões)", "que os principais portos de desembarque foram Rio de Janeiro e Bahia"], ["que sincretismo é a fusão/mistura de elementos de religiões diferentes", "que a cultura americana veio do contato entre matrizes indígena, africana e europeia", "citei um exemplo (santería ou outro do texto)"], ["que era uma comunidade de africanos e afrodescendentes que escapavam da escravidão", "que se organizavam de forma autônoma", "que por isso é considerado resistência"]], [["que foi a primeira e única revolta de escravizados bem-sucedida", "que resultou na abolição da escravidão e num Estado liderado por ex-escravizados"], ["apontei pelo menos duas diferenças", "uma delas sobre COMO foi (guerra × separação pacífica) ou QUEM liderou", "escrevi com minhas palavras, sem copiar o texto"], ["que a afirmação está errada", "que o Haiti sofreu resistência internacional e isolamento político", "que as potências coloniais temiam revoltas em suas próprias colônias"]], [["que a economia continuou centrada em commodities para a Europa", "que era preciso diversificar as estruturas produtivas", "que independência política não é o mesmo que independência econômica"], ["que é o desafio econômico", "que se trata da economia centrada em commodities / falta de diversificação"], ["que os territórios eram multiculturais / com diversidade étnico-racial", "que era preciso construir uma identidade nacional que unisse todos"]], [["que o território foi colonizado por ingleses E franceses", "citei um efeito atual (duas línguas oficiais: inglês e francês)"], ["que foi para evitar que os Estados Unidos tomassem a colônia", "que isso aconteceu em 1931"], ["que Quebec foi colonizada pela França", "que a maioria da população é descendente de franceses", "que por isso existem movimentos separatistas"]], [["que o país fica em altas latitudes / tem clima polar e frio", "que o permafrost é solo permanentemente congelado", "que isso reduz a área aproveitável para agricultura"], ["citei o dado das exportações (mais de 70% vão para os EUA)", "citei o dado das importações (mais de 50% vêm dos EUA)", "expliquei a conclusão com minhas palavras"], ["que o Nafta foi criado em 1994 entre EUA, Canadá e México", "que em 2018 foi revisado e passou a se chamar USMCA"]], [["que faltava mão de obra para a indústria em expansão", "que o governo incentivou a vinda de trabalhadores", "que a imigração virou fator essencial do crescimento populacional"], ["que a concentração está no centro-sul / vale do São Lourenço / Grandes Lagos", "que é onde ficam as indústrias e as principais atividades econômicas", "que nas demais regiões o clima frio e as florestas deixam a densidade baixa"], ["que os imigrantes ocupam cargos de alta qualificação", "citei um exemplo (programas de computador, jogos eletrônicos)", "expliquei que a escassez de mão de obra abre essas vagas"]]];
+
+var KEY='geo8sj_america_v1_leituraguiada_v1'; var mem={};
+function ler(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){return mem}}
+function gravar(s){try{localStorage.setItem(KEY,JSON.stringify(s))}catch(e){mem=s}carimbo();}
+function carimbo(){
+  var d=new Date();
+  var f=d.toLocaleDateString('pt-BR')+' \u00e0s '+d.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'});
+  S.quando=f;
+  try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){mem=S}
+  var el=document.getElementById('status'); if(el)el.textContent='\uD83D\uDCBE Salvo automaticamente \u2014 \u00faltima vez: '+f;
+}
+function ligarPainel(){
+  document.getElementById('btExportar').onclick=function(){
+    var blob=new Blob([JSON.stringify(S,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='leitura-guiada-geografia8-formacao-america.json'; a.click();
+  };
+  document.getElementById('btImportar').onclick=function(){document.getElementById('arquivo').click();};
+  document.getElementById('arquivo').onchange=function(e){
+    var f=e.target.files[0]; if(!f)return; var r=new FileReader();
+    r.onload=function(){ try{ S=normaliza(JSON.parse(r.result)); gravar(S); render();
+        aviso('Pronto','Seu progresso foi importado com sucesso.');
+      }catch(err){ aviso('Ops','N\u00e3o consegui ler esse arquivo. Ele precisa ser o .json exportado por este material.'); } };
+    r.readAsText(f);
+  };
+  document.getElementById('btZerar').onclick=function(){
+    aviso('Zerar tudo?','Isso apaga tudo o que foi respondido nesta p\u00e1gina. N\u00e3o d\u00e1 para desfazer.',function(){
+      S=normaliza({}); gravar(S); render(); },true);
+  };
+}
+
+
+function normTxt(s){s=(s||'').toLowerCase();try{s=s.normalize('NFD').replace(/[\u0300-\u036f]/g,'')}catch(e){}
+  return s.replace(/[^a-z0-9\s]+/g,' ').replace(/\s+/g,' ').trim();}
+var TXTN=BLOCOS.map(function(b){var d=document.createElement('div');d.innerHTML=b.html;
+  return normTxt(d.textContent||d.innerText||'').split(' ');});
+var QTXT=BLOCOS.map(function(b){return b.q.map(function(q){return normTxt(q).split(' ');});});
+function analisaRuns(rw,bw){
+  var pos={},i2;for(i2=0;i2<bw.length;i2++){(pos[bw[i2]]=pos[bw[i2]]||[]).push(i2);}
+  var i=0,maxRun=0,cob=0,n=rw.length;
+  while(i<n){
+    var best=0,ps=pos[rw[i]]||[];
+    for(var a=0;a<ps.length;a++){var k=0;while(i+k<n&&bw[ps[a]+k]===rw[i+k])k++;if(k>best)best=k;}
+    if(best>maxRun)maxRun=best;
+    if(best>=5){cob+=best;i+=best;}else i++;
+  }
+  return {maxRun:maxRun,cob:cob,n:n};
+}
+function tiraCitacao(rw,qw){
+  var pos={},i2;for(i2=0;i2<qw.length;i2++){(pos[qw[i2]]=pos[qw[i2]]||[]).push(i2);}
+  var out=[],i=0;
+  while(i<rw.length){
+    var best=0,ps=pos[rw[i]]||[];
+    for(var a=0;a<ps.length;a++){var k=0;while(i+k<rw.length&&qw[ps[a]+k]===rw[i+k])k++;if(k>best)best=k;}
+    if(best>=4){i+=best;}else{out.push(rw[i]);i++;}
+  }
+  return out;
+}
+function ehTranscrita(txt,n,j){
+  var w=normTxt(txt).split(' ').filter(function(x){return x;});
+  if(w.length<5)return false;
+  if(j)w=tiraCitacao(w,QTXT[n-1][j-1]);
+  if(w.length<5)return false;
+  var r=analisaRuns(w,TXTN[n-1]);
+  return r.maxRun>=8||(w.length>=8&&r.cob/r.n>0.6);
+}
+
+
+function normaliza(d){d=d||{};if(!d.resp)d.resp={};if(!d.feito)d.feito={};if(!d.auto)d.auto={};
+  if(!d.chk)d.chk={};if(!d.tentou)d.tentou={};if(!d.transcrita)d.transcrita={};return d;}
+var S=normaliza(ler());
+function escapa(s){return (s||'').replace(/</g,'&lt;');}
+function statusBloco(n){
+  var rev=false,total=0,sim=0;
+  for(var j=1;j<=3;j++){
+    var k=n+'-'+j;
+    if(S.transcrita[k])rev=true;
+    var pts=PONTOS[n-1][j-1],c=S.chk[k]||[];
+    for(var p=0;p<pts.length;p++){total++;if(c[p]===0)rev=true;if(c[p]===1)sim++;}
+  }
+  if(rev)return 'rev'; if(total&&sim===total)return 'ok'; return '';
+}
+function render(){
+  var alvo=document.getElementById('blocos'); alvo.innerHTML='';
+  BLOCOS.forEach(function(b,i){
+    var liberado=(i===0)||S.feito[b.n-1];
+    var feito=!!S.feito[b.n];
+    var sec=document.createElement('section');
+    sec.className='bloco'+(liberado?'':' trancado');
+    var perg='';
+    b.q.forEach(function(qt,j){
+      var k=b.n+'-'+(j+1), v=escapa(S.resp[k]), verm=!!S.transcrita[k];
+      var ro=(feito&&!verm)?'readonly':'';
+      perg+='<div class="pergunta"><label for="t'+k+'">'+(j+1)+'. '+qt+'</label>'+
+        '<textarea id="t'+k+'" data-b="'+b.n+'" data-q="'+(j+1)+'" class="'+(verm?'verm':'')+'" '+ro+'>'+v+'</textarea>'+
+        (verm?'<p class="avVerm">\uD83D\uDD34 Esta resposta ainda est\u00e1 igual ao texto do bloco \u2014 reescreva com as SUAS palavras.</p>':'')+
+        '</div>';
+    });
+    var mod='';
+    b.a.forEach(function(at,j){
+      var k=b.n+'-'+(j+1), pts=PONTOS[b.n-1][j], chk=S.chk[k]||[], linhas='';
+      pts.forEach(function(pt,pi){
+        var vv=chk[pi];
+        linhas+='<div class="ponto"><span>'+pt+'</span><span class="pbts">'+
+          '<button class="btChk '+(vv===1?'on':'')+'" data-k="'+k+'" data-p="'+pi+'" data-v="1">Sim</button>'+
+          '<button class="btChk nao '+(vv===0?'on':'')+'" data-k="'+k+'" data-p="'+pi+'" data-v="0">N\u00e3o</button></span></div>';
+      });
+      mod+='<div class="mQ"><p class="mResp"><b>'+(j+1)+'.</b> '+at+'</p>'+
+           '<div class="chkbox"><p class="chkTit">\u2705 Minha resposta disse que\u2026</p>'+linhas+'</div></div>';
+    });
+    var st=feito?statusBloco(b.n):'';
+    var selo=st==='ok'?'<span class="selo-ok">\u2705 Bloco ok</span>':st==='rev'?'<span class="selo-rev">\uD83D\uDD01 Para revisar</span>':'';
+    sec.innerHTML='<div class="cab"><span class="num">'+b.rot+'</span><h2>'+b.t+'</h2><span class="pag">'+b.pg+'</span></div>'+
+      (liberado?
+        '<div class="corpo">'+b.html+'</div>'+
+        '<div class="perguntas"><h3>\u270D\uFE0F Escreva com suas palavras \u2014 3 perguntas</h3>'+perg+
+        '<p class="aviso" id="av'+b.n+'"></p>'+
+        '<button class="principal btConferir" data-b="'+b.n+'" '+(feito?'disabled':'')+'>\u2714\uFE0F Conferir</button></div>'+
+        '<div class="modelo" style="display:'+(feito?'block':'none')+'" id="mod'+b.n+'">'+
+          '<h4>Resposta modelo \u2014 compare ponto a ponto</h4>'+mod+
+          '<div class="auto">'+selo+'</div></div>'
+      : '<div class="cadeado">\uD83D\uDD12 Este bloco abre depois que voc\u00ea conferir o anterior.</div>');
+    alvo.appendChild(sec);
+  });
+  ligar(); progresso(); renderRevisar();
+}
+function renderRevisar(){
+  var box=document.getElementById('revisarBox');
+  var itens=[];
+  BLOCOS.forEach(function(b){
+    if(!S.feito[b.n])return;
+    for(var j=1;j<=3;j++){
+      var k=b.n+'-'+j;
+      if(S.transcrita[k])itens.push('<b>'+b.rot+'</b>, pergunta '+j+': resposta igual ao texto \u2014 reescrever com as suas palavras.');
+      var pts=PONTOS[b.n-1][j-1],c=S.chk[k]||[];
+      for(var p=0;p<pts.length;p++){if(c[p]===0)itens.push('<b>'+b.rot+'</b>, pergunta '+j+': faltou dizer \u2014 \u201c'+pts[p]+'\u201d.');}
+    }
+  });
+  if(!itens.length){box.style.display='none';return;}
+  box.style.display='block';
+  var h='<h2>\uD83D\uDD01 Para revisar antes da prova</h2><ul>';
+  itens.forEach(function(t){h+='<li>'+t+'</li>';});
+  box.innerHTML=h+'</ul>';
+}
+function ligar(){
+  document.querySelectorAll('textarea').forEach(function(t){
+    t.addEventListener('input',function(){
+      var k=t.dataset.b+'-'+t.dataset.q;
+      S.resp[k]=t.value;
+      if(S.transcrita[k]&&!ehTranscrita(t.value,parseInt(t.dataset.b,10),parseInt(t.dataset.q,10))){
+        delete S.transcrita[k]; gravar(S); render();
+        var nt=document.getElementById('t'+k);
+        if(nt){nt.focus();try{nt.selectionStart=nt.selectionEnd=nt.value.length;}catch(e){}}
+        return;
+      }
+      gravar(S);
+    });
+  });
+  document.querySelectorAll('.btConferir').forEach(function(bt){
+    bt.addEventListener('click',function(){
+      var n=parseInt(bt.dataset.b,10),vazio=false,j;
+      for(j=1;j<=3;j++){if((S.resp[n+'-'+j]||'').trim().length<3)vazio=true;}
+      var av=document.getElementById('av'+n);
+      if(vazio){av.textContent='\u26A0\uFE0F Responda as 3 perguntas (pelo menos 3 letras em cada) antes de conferir.';return;}
+      var primeira=[],naoMudou=[];
+      for(var j2=1;j2<=3;j2++){
+        var k=n+'-'+j2,v2=S.resp[k]||'';
+        if(ehTranscrita(v2,n,j2)){
+          if(S.tentou[k]===undefined){S.tentou[k]=v2;primeira.push(j2);}
+          else if(v2===S.tentou[k]){naoMudou.push(j2);}
+          else{S.transcrita[k]=true;}
+        }else if(S.transcrita[k]){delete S.transcrita[k];}
+      }
+      if(primeira.length||naoMudou.length){
+        gravar(S);
+        var m='\uD83D\uDFE1 ';
+        if(primeira.length)m+='Pergunta'+(primeira.length>1?'s':'')+' '+primeira.join(', ')+': boa parte da resposta est\u00e1 igual ao texto do bloco. Tente explicar como se fosse para um amigo, sem olhar o texto \u2014 pode ficar mais curto e simples, o que vale \u00e9 ser SEU. Depois clique em Conferir de novo. ';
+        if(naoMudou.length)m+='Pergunta'+(naoMudou.length>1?'s':'')+' '+naoMudou.join(', ')+': voc\u00ea ainda n\u00e3o mudou a resposta \u2014 altere e clique em Conferir de novo.';
+        av.textContent=m; return;
+      }
+      av.textContent=''; S.feito[n]=true; gravar(S); render();
+      var el2=document.getElementById('mod'+n); if(el2)el2.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  });
+  document.querySelectorAll('.btChk').forEach(function(bt){
+    bt.addEventListener('click',function(){
+      var k=bt.dataset.k;
+      if(!S.chk[k])S.chk[k]=[];
+      S.chk[k][parseInt(bt.dataset.p,10)]=parseInt(bt.dataset.v,10);
+      var n=parseInt(k.split('-')[0],10), st=statusBloco(n); if(st)S.auto[n]=st;
+      gravar(S); render();
+    });
+  });
+}
+function progresso(){
+  var c=0; BLOCOS.forEach(function(b){if(S.feito[b.n])c++;});
+  document.getElementById('barra').style.width=(c/BLOCOS.length*100)+'%';
+  document.getElementById('txtProg').textContent='Bloco '+c+' de '+BLOCOS.length+' conclu\u00eddo'+(c===BLOCOS.length?' \u2014 leitura completa! \uD83C\uDF89':'.');
+}
+ligarPainel(); render(); carimbo();
+
+</script>
+</body></html>
